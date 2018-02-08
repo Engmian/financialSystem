@@ -5,6 +5,7 @@ import com.financial.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -16,9 +17,10 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping("getLogin")
-    public String getLogin(Model model){
-        List<User> list=userService.findAll();
-        model.addAttribute("list",list);
+    public String getLogin(@RequestParam(value = "uphone",required = false)String uphone,Model model){
+
+        userService.findUserList(uphone);
+
         return "login";
     }
 }

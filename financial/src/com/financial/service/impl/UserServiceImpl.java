@@ -6,7 +6,6 @@ import com.financial.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -14,8 +13,7 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public List<User> findAll() {
-        System.out.println("222222222");
-        return userMapper.findAll();
+    public User findUserList(String uphone) {
+        return userMapper.findUserList(uphone);
     }
 }
