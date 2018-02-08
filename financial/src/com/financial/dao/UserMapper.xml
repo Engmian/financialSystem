@@ -5,8 +5,12 @@
 <mapper namespace="com.financial.dao.UserMapper">
 
     <select id="findUserList" resultType="User" parameterType="String">
-        SELECT * FROM user WHERE uphone=#{uphone}
+        SELECT * FROM user_login WHERE uPhone=#{uPhone}
     </select>
+
+    <insert id="createUser" parameterType="User">
+        INSERT INTO user_login(uPhone,uPwd) VALUE (#{uPhone},#{uPwd})
+    </insert>
 
 </mapper>
  

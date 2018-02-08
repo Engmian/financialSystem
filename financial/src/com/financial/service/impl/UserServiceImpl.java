@@ -13,7 +13,12 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public User findUserList(String uphone) {
-        return userMapper.findUserList(uphone);
+    public User findUserList(String uPhone) {
+        return userMapper.findUserList(uPhone);
+    }
+
+    @Override
+    public int createUser(String uPhone, String uPwd, String invite) {
+        return userMapper.createUser(uPhone,uPwd,invite);
     }
 }
