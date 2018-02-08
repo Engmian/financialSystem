@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 public class User implements Serializable {
     private int uid;
-    private String uphone;
-    private String upwd;
+    private String uPhone;
+    private String uPwd;
 
     public int getUid() {
         return uid;
@@ -16,18 +16,18 @@ public class User implements Serializable {
     }
 
     public String getUphone() {
-        return uphone;
+        return uPhone;
     }
 
-    public void setUphone(String uphone) {
-        this.uphone = uphone;
+    public void setUphone(String uPhone) {
+        this.uPhone = uPhone;
     }
 
     public String getUpwd() {
-        return upwd;
+        return uPwd;
     }
 
-    public void setUpwd(String upwd) {
-        this.upwd = upwd;
+    public void setUpwd(String uPwd) {
+        this.uPwd = uPwd;
     }
 }
