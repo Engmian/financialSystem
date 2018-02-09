@@ -1,0 +1,67 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+#body{
+    background-image: url("../images/invitelinkbg.png");
+    height: 580px;
+    background-repeat: no-repeat;
+    clear: both;
+}
+#login-box{
+    background: white;
+    height: 425px;
+    width: 422px;
+    display: inline-block;
+    position: absolute;
+    margin-top: 87px;
+    margin-left: 842px;
+}
+#login-box-title{
+    width: 430px;
+    height: 70px;
+    display: inline-block;
+}
+#dd{
+    color: orangered;
+    display: inline-block;
+    font-size: 25px;
+    margin-left: 50px;
+    padding-top: 20px
+}
+#ee{
+    display: inline-block;
+    height: 277px;
+    width: 430px;
+}
+a{
+    color: gray;
+    font-size: 10px;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+#underground{
+    display: inline-block;
+    width: 430px;
+    height: 250px;
+    margin-top:-50px;
+    position: absolute;
+    margin-top: 15px;
+}
+#underground-mesg{
+    display: inline-block;
+    width: 430px;
+    height: 250px;
+    margin-left: 430px;
+}
+#underground-serve {
+    display: inline-block;
+    width: 430px;
+    height: 250px;
+    position: absolute;
+    margin-left: 10px;
+}
