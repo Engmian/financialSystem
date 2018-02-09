@@ -16,11 +16,23 @@ public class UserController {
     @Resource
     private UserService userService;
 
-    @RequestMapping("getLogin")
-    public String getLogin(@RequestParam(value = "uphone",required = false)String uphone,Model model){
-
-        userService.findUserList(uphone);
+    @RequestMapping("goLogin")
+    public String goLogin(){
 
         return "login";
     }
-}
+    @RequestMapping("getLogin")
+    public String getLogin(@RequestParam(value ="uPhone",required = false)String uPhone,Model model){
+
+    User users = userService.findUserList(uPhone);
+        System.out.println(users.getUphone());
+                model.addAttribute("test",users);
+
+                return "welcome";
+                }
+
+@RequestMapping("goRegister")
+public String goRegister(){
+        return "register";
+        }
+        }

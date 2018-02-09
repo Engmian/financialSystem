@@ -30,7 +30,7 @@
                         <input type="text" name="phonenumber" value="请输入手机号码" style="width: 300px;height: 30px;color: dimgray;border: 1px darkgray solid" >
                     </div></form>
                 <div style="display: inline-block;margin-top:30px;margin-left: 60px">
-                    <input type="text" name="pwd" value="请输入密码" style="width: 300px;height: 30px;color: dimgray;border: 1px darkgray solid" >
+                    <input type="password" name="pwd" value="请输入密码"  style="width: 300px;height: 30px;color: dimgray;border: 1px darkgray solid" >
                 </div>
                 <div style="display: inline-block;margin-top: 30px;margin-left: 60px;">
                     <input type="submit" value="登录" style="color:white;text-align: center;font-size: 18px;background-color:silver;width: 300px;height: 40px;border: none">
