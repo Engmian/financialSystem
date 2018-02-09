@@ -25,16 +25,16 @@
             </div>
             <div style="width: 275px;height: 1px;background-color: #999999; float: right;margin-top: -30px"></div>
             <div id="ee">
-                <form action="#" method="post">
+                <form action="getLogin" method="post">
                     <div style="display: inline-block;margin-top: 10px;margin-left: 60px">
-                        <input type="text" name="phonenumber" value="请输入手机号码" style="width: 300px;height: 30px;color: dimgray;border: 1px darkgray solid" >
-                    </div></form>
-                <div style="display: inline-block;margin-top:30px;margin-left: 60px">
-                    <input type="password" name="pwd" value="请输入密码"  style="width: 300px;height: 30px;color: dimgray;border: 1px darkgray solid" >
-                </div>
-                <div style="display: inline-block;margin-top: 30px;margin-left: 60px;">
-                    <input type="submit" value="登录" style="color:white;text-align: center;font-size: 18px;background-color:silver;width: 300px;height: 40px;border: none">
-                </div>
+                        <input type="text" name="uPhone" placeholder="请输入手机号码" style="width: 300px;height: 30px;color: dimgray;border: 1px darkgray solid" >
+                    </div>
+                    <div style="display: inline-block;margin-top:30px;margin-left: 60px">
+                        <input type="password" name="uPwd" placeholder="请输入密码"  style="width: 300px;height: 30px;color: dimgray;border: 1px darkgray solid" >
+                    </div>
+                    <div style="display: inline-block;margin-top: 30px;margin-left: 60px;">
+                        <input type="submit" value="登录" style="color:white;text-align: center;font-size: 18px;background-color:silver;width: 300px;height: 40px;border: none">
+                    </div>
                 </form>
                 <div style="margin-left: 60px; margin-top: 30px"><span style="color: #999999;font-size: 14px">没有账号？</span> <a href="#" style="color: #007aff;font-size: 14px">快速注册</a> <span style="color: #999999;font-size: 14px">|</span> <a href="#" style="color: #007aff;font-size: 14px">忘记密码</a></div>
             </div>
