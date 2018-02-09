@@ -9,8 +9,8 @@
 <%@ page isELIgnored="false" %>
 <html>
 <head>
-    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/statics/css/login.css">
-    <title>登录</title>
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/statics/css/register.css">
+    <title>注册页面</title>
 </head>
 <body>
 <!--头部-->
@@ -18,19 +18,23 @@
          margin-left: 150px;"><img src="${pageContext.request.contextPath}/statics/images/logo.png" style="display:inline-block;height: 40px;width:150px;"></div>&nbsp;
 <div style="display:inline-block;margin-top: -500px;margin-left: 0px"><span style="color: darkgrey;font-size: 15px">|&nbsp;国资100%控股</span></div>
 <!--登录部分-->
-<div id="aa">
-    <div id="bb">
-        <div id="cc">
+<div id="body">
+    <div id="login-box">
+        <div id="login-box-title">
             <div style="width: 40px;height: 1px;background-color: #999999; float: left;margin-top: 40px;"></div><div id="dd" style="margin-left: 5px">会员登录</div>
         </div>
         <div style="width: 275px;height: 1px;background-color: #999999; float: right;margin-top: -30px"></div>
-        <div id="ee">
-            <form action="#" method="post">
+        <div id="login-box-text">
+            <form action="doRegister" method="post">
                 <div style="display: inline-block;margin-top: 10px;margin-left: 60px">
-                    <input type="text" name="phonenumber" value="请输入手机号码" style="width: 300px;height: 30px;color: dimgray;border: 1px darkgray solid" >
-                </div></form>
+                    <input type="text" name="uPhone" placeholder="请输入手机号码" style="width: 300px;height: 30px;color: dimgray;border: 1px darkgray solid" >
+                </div>
+                <div style="display: inline-block;margin-top: 30px;margin-left: 60px">
+                    <input type="text" name="test-person" placeholder="请输入验证码" style="width: 200px;height: 30px;color: dimgray;border: 1px darkgray solid" >
+                    <a href="javascript:void(0)" style="width: 90px;height: 30px;color: #b7d2ff">获取验证码</a>
+                </div>
             <div style="display: inline-block;margin-top:30px;margin-left: 60px">
-                <input type="password" name="pwd" value="请输入密码"  style="width: 300px;height: 30px;color: dimgray;border: 1px darkgray solid" >
+                <input type="password" name="uPwd" placeholder="请输入密码"  style="width: 300px;height: 30px;color: dimgray;border: 1px darkgray solid" >
             </div>
             <div style="display: inline-block;margin-top: 30px;margin-left: 60px;">
                 <input type="submit" value="登录" style="color:white;text-align: center;font-size: 18px;background-color:silver;width: 300px;height: 40px;border: none">
@@ -41,7 +45,7 @@
     </div>
 </div>
 <!--底部-->
-<div id="ff">
+<div id="underground">
     <div style="display: inline-block;width: 200px;height: 250px">
         <ul style="margin-top: 30px;margin-left:15px;list-style: none;line-height: 40px">
             <li style="font-size: 20px">信息披露</li>
@@ -60,7 +64,7 @@
     </div>
 </div>
 
-<div id="gg">
+<div id="underground-mesg">
     <div style="height: 250px;width: 210px;display: inline-block">
         <img src="${pageContext.request.contextPath}/statics/images/appcode.png" style="margin-left: 35px;margin-top: 30px">
         <p style="font-size: 10px;color:gray;text-align: center">手机客户端</p>
@@ -73,7 +77,7 @@
     </div>
 </div>
 
-<div id="hh">
+<div id="underground-serve">
     <p style="font-size: 20px;margin-left: 70px;color: gray">客服热线</p>
     <p style="font-size: 40px;color: #3288e6;margin-left: 70px;">021-80339858</p>
     <p style="font-size: 10px;color:gray;margin-left: 70px;">周一至周五 09:00-18:00</p>
