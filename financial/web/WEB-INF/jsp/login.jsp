@@ -29,6 +29,8 @@
                     <div style="display: inline-block;margin-top: 10px;margin-left: 60px">
                         <input type="text" name="uPhone" placeholder="请输入手机号码" style="width: 300px;height: 30px;color: dimgray;border: 1px darkgray solid" >
                     </div>
+                    <!-- 当用户账号或密码错误时，此处需要提示用户账号密码错误，后台提示已传到页面，麻烦前端处理一下提示格式 -->
+                    <%--<div style="font-size: 10px;color: red">${prompt}</div>--%>
                     <div style="display: inline-block;margin-top:30px;margin-left: 60px">
                         <input type="password" name="uPwd" placeholder="请输入密码"  style="width: 300px;height: 30px;color: dimgray;border: 1px darkgray solid" >
                     </div>
@@ -36,7 +38,7 @@
                         <input type="submit" value="登录" style="color:white;text-align: center;font-size: 18px;background-color:silver;width: 300px;height: 40px;border: none">
                     </div>
                 </form>
-                <div style="margin-left: 60px; margin-top: 30px"><span style="color: #999999;font-size: 14px">没有账号？</span> <a href="#" style="color: #007aff;font-size: 14px">快速注册</a> <span style="color: #999999;font-size: 14px">|</span> <a href="#" style="color: #007aff;font-size: 14px">忘记密码</a></div>
+                <div style="margin-left: 60px; margin-top: 30px"><span style="color: #999999;font-size: 14px">没有账号？</span> <a href="gotoRegister" style="color: #007aff;font-size: 14px">快速注册</a> <span style="color: #999999;font-size: 14px">|</span> <a href="#" style="color: #007aff;font-size: 14px">忘记密码</a></div>
             </div>
         </div>
     </div>

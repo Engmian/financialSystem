@@ -12,7 +12,7 @@
         INSERT INTO user_login(uPhone,uPwd) VALUE (#{uPhone},#{uPwd})
     </insert>
 
-    <select id="createUser" parameterType="String" resultType="User">
+    <select id="findUseruphone" parameterType="String" resultType="User">
         SELECT uPhone FROM user_login WHERE uPhone=#{uPhone}
     </select>
 
