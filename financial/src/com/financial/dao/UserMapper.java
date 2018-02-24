@@ -12,5 +12,5 @@ public interface UserMapper {
     //注册
     int createUser(@Param("uPhone")String uPhone, @Param("uPwd")String uPwd);
     //通过查询表中的电话号码，判断用户输入的邀请函是否是数据已经存在的用户，如果不存在，则提示用户推荐人不存在，让邀请人为空
-    User findUseruphone(@Param("uPhone")String uPhone);
+    String findUseruphone(@Param("uPhone")String uPhone);
 }

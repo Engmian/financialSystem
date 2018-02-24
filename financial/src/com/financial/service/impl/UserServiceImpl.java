@@ -23,7 +23,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findUseruphone(String uPhone) {
+    public String findUseruphone(String uPhone) {
         return userMapper.findUseruphone(uPhone);
     }
 

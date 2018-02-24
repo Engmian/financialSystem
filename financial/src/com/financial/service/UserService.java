@@ -12,6 +12,6 @@ public interface UserService {
 
     int createUser(String uPhone, String uPwd);
 
-    User findUseruphone(String uPhone);
+    String findUseruphone(String uPhone);
 }
 
