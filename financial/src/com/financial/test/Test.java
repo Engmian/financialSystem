@@ -14,7 +14,12 @@ public class Test {
     public static void main(String[] args) {
         ApplicationContext act = new ClassPathXmlApplicationContext("applicationContext-mybatis.xml");
         UserService userService = (UserService) act.getBean("userServiceImpl");
-        User userList = userService.findUserList("13546270677", "123456");
-        System.out.println(userList.getUphone()+"\t"+userList.getUpwd());
+        /*User useruphone = userService.findUseruphone("13546270677");*/
+        int userCreate=-1;
+        userCreate = userService.createUser("18588450732", "456789");
+
+            System.out.println(userCreate);
+
+
     }
 }

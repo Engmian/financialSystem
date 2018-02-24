@@ -1,8 +1,16 @@
 package com.financial.controllers;
 
+import com.aliyuncs.DefaultAcsClient;
+import com.aliyuncs.IAcsClient;
+import com.aliyuncs.dysmsapi.model.v20170525.SendSmsRequest;
+import com.aliyuncs.dysmsapi.model.v20170525.SendSmsResponse;
+import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.profile.DefaultProfile;
+import com.aliyuncs.profile.IClientProfile;
 import com.financial.entity.User;
 import com.financial.service.UserService;
 import com.financial.utils.MD5Utils;
+import com.financial.utils.SendCode;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,8 +20,8 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
-@RequestMapping("userController")
-public class UserController {
+@RequestMapping("loginController")
+public class LoginController {
     @Resource
     private UserService userService;
 
@@ -47,39 +55,6 @@ public class UserController {
         return "login";
     }
 
-    //注册控制器(当用户点击注册按钮时，均调到此处，然后转发到注册页面)
-    @RequestMapping("/gotoRegister")
-    public String gotoRegister(){
-        return "register";
-    }
 
-    @RequestMapping("/doRegister")
-    public String doRegister(@RequestParam("uPhone")String uPhone, @RequestParam("uPwd")String uPwd, @RequestParam(value = "invite",required = false)String invite,  Model model){
-        int userNum=-1;
-        if (invite == null || invite.equals("")) {
-            userNum = userService.createUser(uPhone, uPwd);
-            if (userNum > 0) {
-                return "welcome";
-            }else {
-                return "register";
-            }
-        }
-
-        if (invite != null && invite.equals("")) {
-            User useruphone = userService.findUseruphone(invite);
-            if (useruphone == null) {
-                model.addAttribute("invite","推荐人不存在");
-                return "register";
-            }else {
-                userNum = userService.createUser(uPhone, uPwd);
-                if (userNum > 0) {
-                    return "welcome";
-                }else {
-                    return "register";
-                }
-            }
-        }
-        return "welcome";
-    }
 
 }

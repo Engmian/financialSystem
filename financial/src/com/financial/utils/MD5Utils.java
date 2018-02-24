@@ -3,6 +3,9 @@ package com.financial.utils;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * 生成加密文件工具
+ */
 public class MD5Utils {
     public static String getMd5(String code){
         //用于加密的字符串

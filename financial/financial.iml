@@ -66,5 +66,27 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/web/WEB-INF/lib/taobao-sdk-java-auto_1455552377940-20160607.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="aliyun-java-sdk-core-3.3.1">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/web/WEB-INF/lib/aliyun-java-sdk-core-3.3.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/web/WEB-INF/lib/aliyun-java-sdk-dysmsapi-1.0.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/web/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar!/" />
+          <root url="jar://$MODULE_DIR$/web/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
   </component>
 </module>

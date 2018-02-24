@@ -9,8 +9,33 @@
 <%@ page isELIgnored="false" %>
 <html>
 <head>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/statics/js/jquery-1.8.3.min.js"></script>
     <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/statics/css/register.css">
     <title>注册页面</title>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#getCode").click(function () {
+                var uPhone=$("#phoneCss").val();
+                if(uPhone == null || uPhone==""){
+                    /*$("#phoneCss").focus(function () {
+                        $("#phoneCss").css("background-color","blue");
+                    })*/
+                } else {
+                    $.ajax({
+                        "url"       : "gotoSendCode",//要提交的路径
+                        "Type"	 	: "post",//提交方式
+                        "data"	 	: "uPhone="+uPhone,//发送到服务器的数据
+                        "dataType"  : "text",//指定返回的数据格式
+                        "success" 	: function (data) {
+                        },//响应成功后要执行代码
+                        "error"		: function() { //请求失败后要执行代码
+                            $("#codeMiss").html("短信验证码错误！");
+                        }
+                    });
+                }
+            })
+        })
+    </script>
 </head>
     <body>
     <!--头部-->
@@ -27,12 +52,15 @@
                 <div id="login-box-text">
                     <form action="doRegister" method="post">
                         <div style="display: inline-block;margin-top: 10px;margin-left: 60px">
-                            <input type="text" name="uPhone" placeholder="请输入手机号码" style="width: 300px;height: 30px;color: dimgray;border: 1px darkgray solid" >
+                            <input type="text" name="uPhone" placeholder="请输入手机号码" style="width: 300px;height: 30px;color: dimgray;border: 1px darkgray solid" id="phoneCss" >
                         </div>
                         <div style="display: inline-block;margin-top: 30px;margin-left: 60px">
-                            <input type="text" name="test-person" placeholder="请输入验证码" style="width: 200px;height: 30px;color: dimgray;border: 1px darkgray solid" >
+                            <input type="text" name="testPerson" placeholder="请输入验证码" style="width: 200px;height: 30px;color: dimgray;border: 1px darkgray solid" >
                             <a href="javascript:void(0)" style="width: 90px;height: 30px;color: #b7d2ff" id="getCode">获取验证码</a>
+                            <%--如果用户输入短信验证码错误，则此处提醒
+                            <div id="codeMiss"></div>--%>
                         </div>
+                        <div id="code" style="display: none"></div>
                     <div style="display: inline-block;margin-top:30px;margin-left: 60px">
                         <input type="password" name="uPwd" placeholder="请输入密码"  style="width: 300px;height: 30px;color: dimgray;border: 1px darkgray solid" >
                     </div>
@@ -45,7 +73,7 @@
                         <input type="submit" value="登录" style="color:white;text-align: center;font-size: 18px;background-color:silver;width: 300px;height: 40px;border: none">
                     </div>
                     </form>
-                    <div style="margin-left: 60px; margin-top: 30px"><span style="color: #999999;font-size: 14px">已经有账号?<span style="color: grey"> |</span> <a href="gotoLogin" style="color: #007aff;font-size: 14px">立即登陆</a></div>
+                    <div style="margin-left: 60px; margin-top: 30px"><span style="color: #999999;font-size: 14px">已经有账号?</span><span style="color: grey"> | </span> <a href="${pageContext.request.contextPath}/loginController/gotoLogin" style="color: #007aff;font-size: 14px">立即登陆</a></div>
                 </div>
             </div>
         </div>
@@ -92,11 +120,27 @@
             <img src="${pageContext.request.contextPath}/statics/images/2.png">
         </div>
 
-        <script type="text/javascript">
-            //获取短信点击属性
-            var elementById = document.getElementById("getCode");
-            //注册点击事件
-        </script>
-
+    <script type="text/javascript">
+    //获取短信点击属性
+    var getCode = document.getElementById("getCode");
+    var flag=120;
+    //注册点击事件
+    getCode.onclick=function () {
+        if (flag < 120){
+        return;
+        }
+        timer();
+    }
+    function timer() {
+        flag--;
+        getCode.innerHTML=flag+"秒以后重新获取！";
+        if(flag == 0){
+            getCode.innerHTML="获取验证码";
+            flag=120;
+        }else {
+            setTimeout("timer()",1000);
+        }
+    }
+    </script>
     </body>
 </html>

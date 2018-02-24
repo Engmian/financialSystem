@@ -10,7 +10,7 @@
 <html>
 <head>
     <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/statics/css/login.css">
-    <title>登录</title>
+    <title>沪深理财-用户登录</title>
 </head>
 <body>
     <!--头部-->
@@ -38,7 +38,7 @@
                         <input type="submit" value="登录" style="color:white;text-align: center;font-size: 18px;background-color:silver;width: 300px;height: 40px;border: none">
                     </div>
                 </form>
-                <div style="margin-left: 60px; margin-top: 30px"><span style="color: #999999;font-size: 14px">没有账号？</span> <a href="gotoRegister" style="color: #007aff;font-size: 14px">快速注册</a> <span style="color: #999999;font-size: 14px">|</span> <a href="#" style="color: #007aff;font-size: 14px">忘记密码</a></div>
+                <div style="margin-left: 60px; margin-top: 30px"><span style="color: #999999;font-size: 14px">没有账号？</span> <a href="${pageContext.request.contextPath}/registerController/gotoRegister" style="color: #007aff;font-size: 14px">快速注册</a> <span style="color: #999999;font-size: 14px">|</span> <a href="#" style="color: #007aff;font-size: 14px">忘记密码</a></div>
             </div>
         </div>
     </div>
