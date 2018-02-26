@@ -60,8 +60,8 @@ public class RegisterController {
 
             //当用户注册时，选择推荐人了，则进行推荐人判断，如果存在，则记录一次，不存在，则告诉该用户推荐人不存
             if (invite != null && invite.equals("")) {
-                User useruphone = userService.findUseruphone(invite);
-                if (useruphone == null) {
+                String useruphone = userService.findUseruphone(invite);
+                if (useruphone==null || useruphone=="") {
                     model.addAttribute("invite","推荐人不存在");
                     return "register";
                 }else {
