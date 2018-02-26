@@ -13,13 +13,12 @@
     <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/statics/css/register.css">
     <title>注册页面</title>
     <script type="text/javascript">
+
         $(document).ready(function () {
             $("#getCode").click(function () {
-                var uPhone=$("#phoneCss").val();
+                var uPhone=$("#uPhone").val();
                 if(uPhone == null || uPhone==""){
-                    /*$("#phoneCss").focus(function () {
-                        $("#phoneCss").css("background-color","blue");
-                    })*/
+                    $("#uPhone").focus();
                 } else {
                     $.ajax({
                         "url"       : "gotoSendCode",//要提交的路径
@@ -31,9 +30,62 @@
                         "error"		: function() { //请求失败后要执行代码
                             $("#codeMiss").html("短信验证码错误！");
                         }
-                    });
+                    })
+
+
+
                 }
             })
+            $("#uPhone").blur(function() {
+                var uPhone = this.value;
+                if (uPhone == null || uPhone == "") {
+                    $("#nameDiv").html("*用户名不能为空！");
+                } else if (!(/^1[3|4|5|8][0-9]\d{4,8}$/.test(uPhone))){
+                    $("#nameDiv").html("*请输入正确手机号码");
+                }
+                else {
+                    /* $.ajax({
+                        "url"       : "userServlet",   //要提交的URL路径
+                        "type"      : "POST",          //发送请求的方式
+                        "data"      : "name="+name,    //要发送到服务器的数据
+                        "success"   : callBack         //响应成功后要执行的代码
+                    }); */
+                    $.post("${pageContext.request.contextPath}/ajaxController/testUphone", "uPhone="+uPhone, callBack);
+                    //响应成功时的回调函数
+                    function callBack(data) {
+                        if (data == "true") {
+                            $("#nameDiv").html("*该手机已被使用！");
+                        }else {
+                            $("#nameDiv").html("");
+                        }
+                    }//end of callBack()
+                }
+            });//end of the test uPhone
+            $("#uPhone").blur(function() {
+                var uPhone = this.value;
+                if (uPhone == null || uPhone == "") {
+                    $("#nameDiv").html("*用户名不能为空！");
+                } else if (!(/^1[3|4|5|8][0-9]\d{4,8}$/.test(uPhone))){
+                    $("#nameDiv").html("*请输入正确手机号码");
+                }
+                else {
+                    /* $.ajax({
+                        "url"       : "userServlet",   //要提交的URL路径
+                        "type"      : "POST",          //发送请求的方式
+                        "data"      : "name="+name,    //要发送到服务器的数据
+                        "success"   : callBack         //响应成功后要执行的代码
+                    }); */
+                    $.post("${pageContext.request.contextPath}/ajaxController/testUphone", "uPhone="+uPhone, callBack);
+                    //响应成功时的回调函数
+                    function callBack(data) {
+                        if (data == "true") {
+                            $("#nameDiv").html("*该手机已被使用！");
+                        }else {
+                            $("#nameDiv").html("");
+                        }
+                    }//end of callBack()
+                }
+            });//end of the test uPhone
         })
     </script>
 </head>
@@ -51,8 +103,10 @@
                 <div style="width: 275px;height: 1px;background-color: #999999; float: right;margin-top: -30px"></div>
                 <div id="login-box-text">
                     <form action="doRegister" method="post">
-                        <div style="display: inline-block;margin-top: 10px;margin-left: 60px">
-                            <input type="text" name="uPhone" placeholder="请输入手机号码" style="width: 300px;height: 30px;color: dimgray;border: 1px darkgray solid" id="phoneCss" >
+                        <div style="height:30px;display: inline-block;margin-top: 10px;margin-left: 60px">
+                            <input type="text" name="uPhone" placeholder="请输入手机号码" style="width: 300px;height: 30px;color: dimgray;border: 1px darkgray solid" id="uPhone" >
+                            <br>
+                            <div id="nameDiv" style="font-size:14px;color: red;display: inline"></div>
                         </div>
                         <div style="display: inline-block;margin-top: 30px;margin-left: 60px">
                             <input type="text" name="testPerson" placeholder="请输入验证码" style="width: 200px;height: 30px;color: dimgray;border: 1px darkgray solid" >
@@ -120,14 +174,19 @@
             <img src="${pageContext.request.contextPath}/statics/images/2.png">
         </div>
 
-    <script type="text/javascript">
+   <script type="text/javascript">
     //获取短信点击属性
     var getCode = document.getElementById("getCode");
     var flag=120;
     //注册点击事件
     getCode.onclick=function () {
-        if (flag < 120){
-        return;
+        var uPhone=$("#uPhone").val();
+        if(uPhone == null || uPhone=="") {
+            timer().remove();
+        }else{
+            if (flag < 120){
+                return;
+            }
         }
         timer();
     }

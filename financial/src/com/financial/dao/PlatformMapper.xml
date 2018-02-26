@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.financial.dao.PlatformMapper">
+
+    <select id="getPlatformDataList" resultType="Platform_data">
+    SELECT * FROM platform_data WHERE pid = #{pid};
+    </select>
+
+
+</mapper>
+ 

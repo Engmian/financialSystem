@@ -14,7 +14,6 @@
 </head>
 <body>
 welcome back
-${test.uPhone}
-
+以收益${platformData.profit}
 </body>
 </html>

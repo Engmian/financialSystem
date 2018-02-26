@@ -12,12 +12,12 @@
 }
 #login-box{
     background: white;
-    height: 425px;
+    height: 445px;
     width: 422px;
     display: inline-block;
     position: absolute;
-    margin-top: 87px;
-    margin-left: 842px;
+    margin-top: 67px;
+    margin-left: 1042px;
 }
 #login-box-title{
     width: 430px;
