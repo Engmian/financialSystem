@@ -58,6 +58,7 @@
                         }else {
                             $("#nameDiv").html("");
                             $("#submit").removeAttr("disabled");
+                            $("#submit").css("background-color","blue");
                         }
                     }//end of callBack()
                 }
