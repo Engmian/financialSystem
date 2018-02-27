@@ -31,17 +31,16 @@
                             $("#codeMiss").html("短信验证码错误！");
                         }
                     })
-
-
-
                 }
             })
             $("#uPhone").blur(function() {
                 var uPhone = this.value;
                 if (uPhone == null || uPhone == "") {
                     $("#nameDiv").html("*用户名不能为空！");
+                    $("#submit").attr("disabled",true);
                 } else if (!(/^1[3|4|5|8][0-9]\d{4,8}$/.test(uPhone))){
                     $("#nameDiv").html("*请输入正确手机号码");
+                    $("#submit").attr("disabled",true);
                 }
                 else {
                     /* $.ajax({
@@ -55,37 +54,15 @@
                     function callBack(data) {
                         if (data == "true") {
                             $("#nameDiv").html("*该手机已被使用！");
+                            $("#submit").attr("disabled",true);
                         }else {
                             $("#nameDiv").html("");
+                            $("#submit").removeAttr("disabled");
+                            $("#submit").css("background-color","blue");
                         }
                     }//end of callBack()
                 }
-            });//end of the test uPhone
-            $("#uPhone").blur(function() {
-                var uPhone = this.value;
-                if (uPhone == null || uPhone == "") {
-                    $("#nameDiv").html("*用户名不能为空！");
-                } else if (!(/^1[3|4|5|8][0-9]\d{4,8}$/.test(uPhone))){
-                    $("#nameDiv").html("*请输入正确手机号码");
-                }
-                else {
-                    /* $.ajax({
-                        "url"       : "userServlet",   //要提交的URL路径
-                        "type"      : "POST",          //发送请求的方式
-                        "data"      : "name="+name,    //要发送到服务器的数据
-                        "success"   : callBack         //响应成功后要执行的代码
-                    }); */
-                    $.post("${pageContext.request.contextPath}/ajaxController/testUphone", "uPhone="+uPhone, callBack);
-                    //响应成功时的回调函数
-                    function callBack(data) {
-                        if (data == "true") {
-                            $("#nameDiv").html("*该手机已被使用！");
-                        }else {
-                            $("#nameDiv").html("");
-                        }
-                    }//end of callBack()
-                }
-            });//end of the test uPhone
+            });
         })
     </script>
 </head>
@@ -124,7 +101,7 @@
                         <!-- 此处后台已传“推荐人不存在”，请前端务必调整一下格式 -->
                         <%--<div>${invite}</div>--%>
                     <div style="display: inline-block;margin-top: 30px;margin-left: 60px;">
-                        <input type="submit" value="登录" style="color:white;text-align: center;font-size: 18px;background-color:silver;width: 300px;height: 40px;border: none">
+                        <input type="submit" value="登录" id="submit" style="color:white;text-align: center;font-size: 18px;background-color:silver;width: 300px;height: 40px;border: none">
                     </div>
                     </form>
                     <div style="margin-left: 60px; margin-top: 30px"><span style="color: #999999;font-size: 14px">已经有账号?</span><span style="color: grey"> | </span> <a href="${pageContext.request.contextPath}/loginController/gotoLogin" style="color: #007aff;font-size: 14px">立即登陆</a></div>
@@ -182,7 +159,8 @@
     getCode.onclick=function () {
         var uPhone=$("#uPhone").val();
         if(uPhone == null || uPhone=="") {
-            timer().remove();
+            alert("清先输入手机号码")
+            return;
         }else{
             if (flag < 120){
                 return;
