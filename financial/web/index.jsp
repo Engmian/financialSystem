@@ -11,11 +11,11 @@
     <title>$Title$</title>
     <script>
       function tiaozhuan() {
-          window.location="jsp/mainPage.sjsp";
+          window.location="main/home";
       }
     </script>
   </head>
-  <body>
+  <body onload="tiaozhuan()">
   $END$
   </body>
 </html>
