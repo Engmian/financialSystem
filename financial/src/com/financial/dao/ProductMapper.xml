@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.financial.dao.ProductMapper">
+
+    <select id="findNoviceType" resultType="Product" parameterType="int">
+        SELECT pro_type,pro_pro,stage,pro_day,pro_fi FROM product WHERE pro_id=#{pro_id};
+    </select>
+
+    <select id="findHuShenMark" resultType="Product" parameterType="int">
+        SELECT pro_type,pro_pro,pro_day,pro_fi FROM product WHERE pro_id=#{pro_id};
+    </select>
+
+    <select id="findHuShen" resultType="Product" parameterType="int">
+        SELECT pro_type,pro_pro,stage,pro_day,platform_discount FROM product WHERE pro_id=#{pro_id};
+    </select>
+
+
+</mapper>
+ 

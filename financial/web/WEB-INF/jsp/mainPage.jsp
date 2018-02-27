@@ -8,8 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>沪深理财-网贷投资理财</title>
     <link rel="stylesheet" href="../../statics/css/zhu.css">
+    <link rel="stylesheet" type="text/css" href="../../statics/js/jquery.easyui.min.js">
+    <script type="text/javascript" src="../../statics/js/jquery.min.js"></script>
 </head>
 <body>
 <!--客服-->
@@ -65,8 +67,8 @@
                     <li class="account"><a ng-class="{true: 'active'}[activeNav == 'new']" ng-click="activeNav='new'" href="/main/jt/GSJJ?menuName=GSJJ">信息披露</a></li>
                 </ul>
                 <div class="nologin ng-scope" ng-if="!(a | isRegister).register">
-                    <a href="/dl" class="login">登录</a>
-                    <a href="/zhuce" class="register">注册送大礼</a>
+                    <a href="${pageContext.request.contextPath}/loginController/gotoLogin" class="login">登录</a>
+                    <a href="${pageContext.request.contextPath}/registerController/gotoRegister" class="register">注册送大礼</a>
                 </div>
             </div>
         </div>
@@ -113,10 +115,10 @@
                     <h2><span>6</span>% &nbsp;~&nbsp;<span>12</span>%</h2>
                 </div>
 
-                <a href="zhuce" class="register" style="width: 214px!important;">注册领288红包</a>
+                <a href="${pageContext.request.contextPath}/registerController/gotoRegister" class="register" style="width: 214px!important;">注册领288红包</a>
                 <!-- <i ng-if="!(a | isRegister).register" class="home-icon"></i> -->
                 <div class="operate">
-                    已有账号？<a href="dl" class="">立即登录</a></div>
+                    已有账号？<a href="${pageContext.request.contextPath}/loginController/gotoLogin" class="">立即登录</a></div>
             </div>
         </div>
     </div>
@@ -183,7 +185,10 @@
                     累计投资金额
                     <span>
                             ￥
-                            <h2 class="timr currency count-title" id="count-number">$9</h2>
+                        <h2 class="timr currency count-title" id="count-number">
+                            ${platformData.cumulative_investment}
+
+                        </h2>
                             元
                         </span>
                 </li>
@@ -191,14 +196,14 @@
                     已为用户赚取利益
                     <span>
                             ￥
-                            <h2 class="timr currency count-title" id="count-number2">$9</h2>
+                            <h2 class="timr currency count-title" id="count-number2">${platformData.profit}</h2>
                             元
                         </span>
                 </li>
                 <li>
                     平台用户
                     <span>
-                            <h2 class="timr currency count-title" id="count-number3">$9</h2>
+                            <h2 class="timr currency count-title" id="count-number3">${platformData.platform_use}</h2>
                             人
                         </span>
                 </li>
@@ -271,18 +276,18 @@
                         </div>
                         <div class="info">
                             <div class="title ng-binding">
-                                新手专享标第256期
+                                ${noviceType.pro_type}第${noviceType.stage}期
                                 <span class="txt">可用新手红包</span>
                             </div>
                             <table class="list">
                                 <tbody>
                                 <tr>
                                     <td width="37%" class="rate">
-                                        <strong class="ng-binding">12.28</strong>
-                                        %
+                                        <strong class="ng-binding">${noviceType.pro_pro}</strong>
+
                                     </td>
                                     <td width="33%">
-                                        <strong class="ng-binding">5</strong>
+                                        <strong class="ng-binding">${noviceType.pro_day}</strong>
                                         天
                                     </td>
                                     <td width="33%">
@@ -299,7 +304,7 @@
                                         <p>投资期限</p>
                                     </td>
                                     <td idthw="33%">
-                                        <p>限投一次</p>
+                                        <p>${noviceType.pro_fi}</p>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -321,18 +326,17 @@
                         </div>
                         <div class="info">
                             <div class="title">
-                                沪深活动标
+                                ${huShenMark.pro_type}
                                 <span class="txt intro">投资白拿京东卡</span>
                             </div>
                             <table class="list">
                                 <tbody>
                                 <tr>
                                     <td width="37%" class="rate">
-                                        <strong class="ng-binding">8</strong>
-                                        %
+                                        <strong class="ng-binding">${huShenMark.pro_pro}</strong>
                                     </td>
                                     <td width="33%">
-                                        <strong class="ng-binding">180</strong>
+                                        <strong class="ng-binding">${huShenMark.pro_day}</strong>
                                         天
                                     </td>
                                     <td width="33%">
@@ -349,7 +353,7 @@
                                         <p>投资期限</p>
                                     </td>
                                     <td idthw="33%">
-                                        <p>限投一次</p>
+                                        <p>${huShenMark.pro_fi}</p>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -377,15 +381,15 @@
                                 <td class="ng-scope">
                                     <div class="cuowei mode pull-left">
                                         <div class="top ng-binding">
-                                            沪深30第488期
+                                            ${huShen30.pro_type}${huShen30.pro_day}第${huShen30.stage}期
                                             <div class="platformDis ng-binding">
-                                                平台贴息3.8%
+                                                平台贴息${huShen30.platform_discount}%
                                             </div>
                                         </div>
                                         <div class="data">
                                                 <span>
-                                                    <b class="ng-binding>">7</b>
-                                                    <i class="ng-binding ng-scope">+3.8%</i>
+                                                    <b class="ng-binding>">${huShen30.pro_pro}</b>
+                                                    <i class="ng-binding ng-scope">+${huShen30.platform_discount}%</i>
                                                 </span>
                                             <p>历史年化收益率</p>
                                         </div>
@@ -395,7 +399,7 @@
                                             </div>
                                         </div>
                                         <div class="deadline">
-                                            <p>期限<b class="ng-binding">30</b>天</p>
+                                            <p>期限<b class="ng-binding">${huShen30.pro_day}</b>天</p>
                                         </div>
                                         <div class="toInvest">
                                             <a class="invest-btn ng-binding">立即投资</a>
@@ -406,15 +410,15 @@
                                     <!--复制-->
                                     <div class="cuowei mode pull-left">
                                         <div class="top ng-binding">
-                                            沪深30第195期
+                                            ${huShen60.pro_type}${huShen360.pro_day}第${huShen60.stage}期
                                             <div class="platformDis ng-binding">
-                                                平台贴息3.8%
+                                                平台贴息${huShen60.platform_discount}%
                                             </div>
                                         </div>
                                         <div class="data">
                                                 <span>
-                                                    <b class="ng-binding>">8</b>
-                                                    <i class="ng-binding ng-scope">+3.8%</i>
+                                                    <b class="ng-binding>">${huShen60.pro_pro}</b>
+                                                    <i class="ng-binding ng-scope">+${huShen60.platform_discount}%</i>
                                                 </span>
                                             <p>历史年化收益率</p>
                                         </div>
@@ -424,7 +428,7 @@
                                             </div>
                                         </div>
                                         <div class="deadline">
-                                            <p>期限<b class="ng-binding">60</b>天</p>
+                                            <p>期限<b class="ng-binding">${huShen60.pro_day}</b>天</p>
                                         </div>
                                         <div class="toInvest">
                                             <a class="invest-btn ng-binding">立即投资</a>
@@ -434,15 +438,15 @@
                                 <td class="ng-scope">
                                     <div class="cuowei mode pull-left">
                                         <div class="top ng-binding">
-                                            沪深90第69期
+                                            ${huShen90.pro_type}${huShen90.pro_day}第${huShen90.stage}期
                                             <div class="platformDis ng-binding">
-                                                平台贴息3.8%
+                                                平台贴息${huShen90.platform_discount}%
                                             </div>
                                         </div>
                                         <div class="data">
                                                 <span>
-                                                    <b class="ng-binding>">8.5</b>
-                                                    <i class="ng-binding ng-scope">+3.8%</i>
+                                                    <b class="ng-binding>">${huShen90.pro_pro}</b>
+                                                    <i class="ng-binding ng-scope">+${huShen90.platform_discount}%</i>
                                                 </span>
                                             <p>历史年化收益率</p>
                                         </div>
@@ -452,7 +456,7 @@
                                             </div>
                                         </div>
                                         <div class="deadline">
-                                            <p>期限<b class="ng-binding">90</b>天</p>
+                                            <p>期限<b class="ng-binding">${huShen90.pro_day}</b>天</p>
                                         </div>
                                         <div class="toInvest">
                                             <a class="invest-btn ng-binding">立即投资</a>
