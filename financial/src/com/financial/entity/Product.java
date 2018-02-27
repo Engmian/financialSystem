@@ -10,6 +10,7 @@ import java.util.Date;
  */
 public class Product implements Serializable{
     private int pro_id;
+    private int pro_name;
     private String pro_type;//类型
     private String pro_pro;//收益率
     private int pro_day;//投资期限
@@ -26,6 +27,7 @@ public class Product implements Serializable{
     private String pro_fi;//投资条件
     private int pro_canUser;//是否可以投资
     private int stage;//第几期
+    private String pro_cim_toString;//数字表达式
 
     public int getPro_id() {
         return pro_id;
@@ -161,5 +163,21 @@ public class Product implements Serializable{
 
     public void setPro_canUser(int pro_canUser) {
         this.pro_canUser = pro_canUser;
+    }
+
+    public int getPro_name() {
+        return pro_name;
+    }
+
+    public void setPro_name(int pro_name) {
+        this.pro_name = pro_name;
+    }
+
+    public String getPro_cim_toString() {
+        return pro_cim_toString;
+    }
+
+    public void setPro_cim_toString(String pro_cim_toString) {
+        this.pro_cim_toString = pro_cim_toString;
     }
 }

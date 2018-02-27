@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @Author:
@@ -36,6 +37,11 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product findHuShen(int pro_id) {
         return productMapper.findHuShen(pro_id);
+    }
+
+    @Override
+    public List<Product> selectProduct() {
+        return productMapper.selectProduct();
     }
 
 }

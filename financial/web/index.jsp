@@ -9,6 +9,11 @@
 <html>
   <head>
     <title>$Title$</title>
+    <script>
+      function tiaozhuan() {
+          window.location="jsp/mainPage.sjsp";
+      }
+    </script>
   </head>
   <body>
   $END$

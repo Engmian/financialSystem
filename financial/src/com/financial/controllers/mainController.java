@@ -4,15 +4,18 @@ import com.financial.entity.Platform_data;
 import com.financial.entity.Product;
 import com.financial.service.PlatformService;
 import com.financial.service.ProductService;
+import com.financial.utils.PageUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.text.DecimalFormat;
 import java.util.List;
 
 @Controller
@@ -50,5 +53,17 @@ public class mainController {
         model.addAttribute("huShen90",huShen90);
 
         return "mainPage";
+    }
+
+    @RequestMapping("/bankBillList")
+    public String goBankBillList(Model model) {
+        List<Product> products = productService.selectProduct();
+        for (Product product:products) {
+            int num = product.getPro_can_investment_money();
+            DecimalFormat df = new DecimalFormat("#,###");
+            product.setPro_cim_toString(df.format(num));
+        }
+        model.addAttribute("productsList", products);
+        return "bankBillList";
     }
 }
