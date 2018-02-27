@@ -3,6 +3,7 @@ package com.financial.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+
 /**
  * @Author:
  * @Date: 2018/2/26 15:39
@@ -26,6 +27,7 @@ public class Product implements Serializable{
     private String pro_fi;//投资条件
     private int pro_canUser;//是否可以投资
     private int stage;//第几期
+    private double platform_discount;//平台贴息
 
     public int getPro_id() {
         return pro_id;
@@ -57,14 +59,6 @@ public class Product implements Serializable{
 
     public void setPro_day(int pro_day) {
         this.pro_day = pro_day;
-    }
-
-    public int getStage() {
-        return stage;
-    }
-
-    public void setStage(int stage) {
-        this.stage = stage;
     }
 
     public int getPro_total() {
@@ -161,5 +155,21 @@ public class Product implements Serializable{
 
     public void setPro_canUser(int pro_canUser) {
         this.pro_canUser = pro_canUser;
+    }
+
+    public int getStage() {
+        return stage;
+    }
+
+    public void setStage(int stage) {
+        this.stage = stage;
+    }
+
+    public double getPlatform_discount() {
+        return platform_discount;
+    }
+
+    public void setPlatform_discount(double platform_discount) {
+        this.platform_discount = platform_discount;
     }
 }

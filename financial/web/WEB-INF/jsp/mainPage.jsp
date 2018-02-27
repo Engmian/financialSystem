@@ -10,8 +10,10 @@
 <head>
     <title>沪深理财-网贷投资理财</title>
     <link rel="stylesheet" href="../../statics/css/zhu.css">
-    <link rel="stylesheet" type="text/css" href="../../statics/js/jquery.easyui.min.js">
     <script type="text/javascript" src="../../statics/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../statics/js/jquery.easyui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://www.java1234.com/">
+
 </head>
 <body>
 <!--客服-->

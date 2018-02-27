@@ -15,4 +15,6 @@ public interface ProductService {
     public Product findHuShenMark(@Param("pro_id")int pro_id);
     //获取沪深30\60\90类型
     public Product findHuShen(@Param("pro_id")int pro_id);
+
+
 }

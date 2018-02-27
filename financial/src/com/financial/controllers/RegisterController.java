@@ -30,8 +30,11 @@ public class RegisterController {
     @RequestMapping("/gotoSendCode")
     public void gotoSendCode(@RequestParam("uPhone")String uPhone, HttpServletRequest request){
         //发送随机数验证码
-        int codes = (int) (Math.random()*10000);
-        String code = codes+"";
+        StringBuffer stringBuffer= new StringBuffer();
+        String code =null;
+        for (int i = 0; i < 4; i++) {
+            code = stringBuffer.append((int)(Math.random() * 10)).toString();
+        }
         request.getSession().setAttribute(uPhone,code);
         try {
             SendCode.sendSms(uPhone,code);

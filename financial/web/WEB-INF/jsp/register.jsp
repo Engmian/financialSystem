@@ -9,6 +9,7 @@
 <%@ page isELIgnored="false" %>
 <html>
 <head>
+    <script type="text/javascript" src="../../statics/js/jquery.easyui.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/statics/js/jquery-1.8.3.min.js"></script>
     <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/statics/css/register.css">
     <title>注册页面</title>
