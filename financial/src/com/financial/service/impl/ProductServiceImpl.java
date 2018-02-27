@@ -17,7 +17,6 @@ import javax.annotation.Resource;
 @Service("productServiceImpl")
 public class ProductServiceImpl implements ProductService {
 
-
     @Resource
     private ProductMapper productMapper;
     @Override
