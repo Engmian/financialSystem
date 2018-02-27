@@ -37,8 +37,10 @@
                 var uPhone = this.value;
                 if (uPhone == null || uPhone == "") {
                     $("#nameDiv").html("*用户名不能为空！");
+                    $("#submit").attr("disabled",true);
                 } else if (!(/^1[3|4|5|8][0-9]\d{4,8}$/.test(uPhone))){
                     $("#nameDiv").html("*请输入正确手机号码");
+                    $("#submit").attr("disabled",true);
                 }
                 else {
                     /* $.ajax({
@@ -52,8 +54,10 @@
                     function callBack(data) {
                         if (data == "true") {
                             $("#nameDiv").html("*该手机已被使用！");
+                            $("#submit").attr("disabled",true);
                         }else {
                             $("#nameDiv").html("");
+                            $("#submit").removeAttr("disabled");
                         }
                     }//end of callBack()
                 }
@@ -96,7 +100,7 @@
                         <!-- 此处后台已传“推荐人不存在”，请前端务必调整一下格式 -->
                         <%--<div>${invite}</div>--%>
                     <div style="display: inline-block;margin-top: 30px;margin-left: 60px;">
-                        <input type="submit" value="登录" style="color:white;text-align: center;font-size: 18px;background-color:silver;width: 300px;height: 40px;border: none">
+                        <input type="submit" value="登录" id="submit" style="color:white;text-align: center;font-size: 18px;background-color:silver;width: 300px;height: 40px;border: none">
                     </div>
                     </form>
                     <div style="margin-left: 60px; margin-top: 30px"><span style="color: #999999;font-size: 14px">已经有账号?</span><span style="color: grey"> | </span> <a href="${pageContext.request.contextPath}/loginController/gotoLogin" style="color: #007aff;font-size: 14px">立即登陆</a></div>
