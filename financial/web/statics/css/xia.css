@@ -1,0 +1,198 @@
+*{margin: 0;padding: 0;}
+div{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+    list-style: none;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+    list-style: none;
+}
+
+
+
+
+
+
+#footer {
+    width: 100%;
+    color: #333;
+}
+.footer-wrapper {
+    width: 100%;
+}
+.footer-wrapper .foot-wrap {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+}
+.footer-wrapper .foot-wrap .foot-nav {
+    font-size: 16px;
+    position: relative;
+    padding: 40px 0;
+}
+.footer-wrapper .foot-wrap .foot-nav .nav-mod {
+    float: left;
+    position: relative;
+    padding-left: 26px;
+    width: 175px;
+}
+.footer-wrapper .foot-wrap .foot-nav .nav-mod p {
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+.footer-wrapper .foot-wrap .foot-nav .nav-mod li {
+    line-height: 28px;
+}
+.footer-wrapper .foot-wrap .foot-nav .nav-mod li a{
+    font-size: 12px;
+    color: #666;
+}
+
+
+
+
+.footer-wrapper .foot-wrap .foot-code {
+    float: left;
+    padding: 30px 27px;
+    border-left: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+}
+.footer-wrapper .foot-wrap .foot-code .mode {
+    float: left;
+    width: 192px;
+    text-align: center;
+}
+.footer-wrapper .foot-wrap .foot-code .mode .box {
+    padding: 6px;
+    width: 122px;
+    height: 122px;
+    margin: 0 auto;
+}
+.footer-wrapper .foot-wrap .foot-code .mode .box img {
+    display: block;
+    border: 1px solid #dedede;
+}
+.footer-wrapper .foot-wrap .foot-code .mode p {
+    color: #666;
+    line-height: 18px;
+    padding-top: 10px;
+}
+.footer-wrapper .contact-wrap {
+    float: left;
+    height: 87px;
+    position: relative;
+    padding: 40px 0 40px 56px;
+}
+.footer-wrapper .contact-wrap .title {
+    font-size: 18px;
+    color: #666;
+}
+.footer-wrapper .contact-wrap strong {
+    display: block;
+    font-size: 32px;
+    line-height: 45px;
+    padding-top: 2px;
+    color: #529cf7;
+}
+.footer-wrapper .contact-wrap .serviceTime {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-top: -2px;
+    line-height: 24px;
+    padding-top: 14px;
+    margin-bottom: 21px;
+}
+.footer-wrapper .contact-wrap .footerqq {
+    color: #529cf7;
+}
+.footer-wrapper .contact-wrap .footerqq .ico {
+    margin-right: 10px;
+    width: 103px;
+    height: 29px;
+    line-height: 29px;
+    text-align: center;
+    cursor: pointer;
+    float: left;
+    border: 1px solid #529cf7;
+}
+.footer-wrapper .contact-wrap .footerqq .ico.qqblue {
+    background: url(../../statics/images/qqblue.png) no-repeat 20px center;
+}
+.footer-wrapper .contact-wrap .footerqq .ico.qqblue a{
+    color: #529cf7;
+}
+.footer-wrapper .contact-wrap .footerqq .ico .text {
+    margin-left: 26px;
+}
+.footer-wrapper .contact-wrap .footerqq .ico.emailblue {
+    background: url(../../statics/images/emailblue.png) no-repeat 20px center;
+}
+
+
+
+
+/*µ½µ×ÁË*/
+.right-wrapper {
+    width: 100%;
+    background: #555;
+    overflow: hidden;
+}
+.right-wrapper .foot-right {
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 25px;
+    color: #b4b4b4;
+    text-align: center;
+}
+.right-wrapper .foot-right ul {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+}
+.right-wrapper .foot-right ul li {
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: 0;
+    display: inline-block;
+    vertical-align: middle;
+    white-space: nowrap;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+.right-wrapper .foot-right ul a{
+    display: block;
+}
+a img{
+    border: none;
+}
+.right-wrapper .foot-right .right-text {
+    padding: 16px 0 18px;
+    position: relative;
+}
+.right-wrapper .foot-right .right-text p {
+    padding-top: 10px;
+    font-size: 14px;
+}

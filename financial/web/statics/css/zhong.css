@@ -1,0 +1,619 @@
+*{margin: 0;padding: 0;}
+div{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+a{
+    text-decoration: none;
+}
+i{
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+span{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+ul {
+    list-style: none;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+b{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+
+
+
+
+
+
+
+/*右侧固定*/
+.float-window {
+    position: fixed;
+    right: 20px;
+    margin-top: -60px;
+    top: 50%;
+    height: 120px;
+    z-index: 15;
+}
+.float-window .float-mod {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+}
+.float-window .float-mod > div {
+    overflow-y: hidden;
+}
+.float-window .float-mod .absolute {
+    display: none;
+    position: absolute;
+    right: 45px;
+    background: #529cf7;
+    border: 7px solid #529cf7;
+    border-radius: 5px;
+}
+.float-window .float-mod .absolute.text {
+    width: 165px;
+    color: #fff;
+    height: 40px;
+}
+.float-window .float-mod .float-ico {
+    width: 45px;
+    height: 45px;
+    border-radius: 4px;
+}
+.float-window .float-mod .float-ico.zxkf {
+    -webkit-appearance: none !important;
+    background: #529cf7 url(../../statics/images/ico-1.png) center center no-repeat !important;
+}
+.float-window .float-mod .float-text {
+    width: 45px;
+    height: 45px;
+    border-radius: 4px;
+    background: #529cf7;
+    color: #fff;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 4px 0px 2px 0px;
+    cursor: pointer;
+}
+.float-window .float-mod a{
+    display: block;
+    color: #fff;
+    background: #529cf7;
+    -webkit-appearance: none;
+}
+.float-window .float-mod {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+}
+.float-window .float-mod img {
+    width: 130px;
+    height: 130px;
+}
+.float-window .float-mod .absolute {
+    display: none;
+    position: absolute;
+    right: 45px;
+    background: #529cf7;
+    border: 7px solid #529cf7;
+    border-radius: 5px;
+}
+.float-window .float-mod > div {
+    width: 45px;
+    height: 45px;
+    overflow-y: hidden;
+    position: relative;
+}
+.float-window .float-mod .float-ico {
+    width: 45px;
+    height: 45px;
+    border-radius: 4px;
+    -webkit-appearance: none;
+}
+.float-window .float-mod .float-ico.weixin {
+    background: #7f7f7f url(../../statics/images/ico-2.png) center center no-repeat;
+}
+.float-window .float-mod .float-text {
+    width: 45px;
+    height: 45px;
+    border-radius: 4px;
+    background: #529cf7;
+    color: #fff;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 4px 0px 2px 0px;
+    cursor: pointer;
+}
+.float-window .float-mod {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+}
+.float-window .float-mod img {
+    width: 130px;
+    height: 130px;
+}
+.float-window .float-mod .absolute {
+    display: none;
+    position: absolute;
+    right: 45px;
+    background: #529cf7;
+    border: 7px solid #529cf7;
+    border-radius: 5px;
+}
+.float-window .float-mod .float-ico.app {
+    background: #7f7f7f url(../../statics/images/ico-3.png) center center no-repeat;
+}
+.float-window .float-mod .float-ico.top {
+    background: #7f7f7f url(../../statics/images/ico-4.png) center center no-repeat;
+}
+
+
+
+
+
+
+
+
+
+/*中间样式*/
+.bill-content-wrapper {
+    width: 100%;
+    padding: 20px 0 80px;
+    background: #f1f1f1;
+}
+.bill-content-wrapper .bill-list-wrap {
+    width: 1200px;
+    margin: 0 auto;
+    width: 1180px;
+}
+.bill-content-wrapper .bill-list-wrap .billing-list {
+    background: #fff;
+}
+.bill-content-wrapper .bill-list-wrap .billing-list .bill-mode {
+    overflow: hidden;
+}
+.bill-content-wrapper .bill-list-wrap .billing-list .bill-mode .list-box {
+    background: none;
+    margin-bottom: -1px;
+}
+.bill-content-wrapper .bill-list-wrap .billing-list {
+    background: #fff;
+}
+.bill-content-wrapper .bill-list-wrap .billing-list.billing-act {
+    margin-top: 22px;
+}
+.bill-content-wrapper .bill-list-wrap .billing-list .bill-mode {
+    overflow: hidden;
+}
+.bill-content-wrapper .bill-list-wrap .list-title {
+    padding-left: 20px;
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px solid #ececec;
+    background: #fafafa;
+}
+.bill-content-wrapper .bill-list-wrap .list-title a{
+    float: right;
+    margin-right: 30px;
+    font-size: 16px;
+    color: #666;
+}
+.listicon-old {
+    background-image: url(../../statics/images/listicon-sbb37da300f.png);
+    background-repeat: no-repeat;
+    background-position: 0 -95px;
+    height: 15px;
+    width: 8px;
+}
+.bill-content-wrapper .bill-list-wrap .list-title a i{
+    font-family: '宋体';
+    margin-left: 9px;
+    float: right;
+    margin: 23px 0 0 9px;
+}
+.listicon-you {
+    background-image: url(../../statics/images/listicon-sbb37da300f.png);
+    background-repeat: no-repeat;
+    background-position: 0 -136px;
+    height: 26px;
+    width: 26px;
+}
+.bill-content-wrapper .bill-list-wrap .list-title b {
+    float: left;
+    margin: 16px 8px 0 0;
+}
+.bill-content-wrapper .bill-list-wrap .list-title p {
+    float: left;
+    font-size: 20px;
+    color: #000;
+    padding-right: 40px;
+    font-weight: bold;
+    line-height: 56px;
+}
+.bill-content-wrapper .bill-list-wrap .list-title .filter-wrap {
+    float: left;
+    font-size: 14px;
+    color: #bbb;
+}
+.bill-content-wrapper .bill-list-wrap .list-title .filter-wrap span {
+    float: left;
+    margin-right: 8px;
+}
+.bill-content-wrapper .bill-list-wrap .list-title .filter-wrap ul {
+    float: left;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+}
+.bill-content-wrapper .bill-list-wrap .list-title .filter-wrap ul li {
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: 0;
+    white-space: nowrap;
+    float: left;
+    padding-right: 0;
+    margin-right: 21px;
+    cursor: pointer;
+}
+.bill-content-wrapper .bill-list-wrap .list-title .filter-wrap ul li:first-child {
+    padding-left: 0;
+}
+.bill-content-wrapper .bill-list-wrap .list-title .filter-wrap ul li.actived{
+    color: #ed714e;
+}
+.bill-down {
+    background-image: url(../../statics/images/bill-s895fc04fa9.png);
+    background-repeat: no-repeat;
+    background-position: 0 -3490px;
+    height: 12px;
+    width: 9px;
+}
+.bill-content-wrapper .bill-list-wrap .list-title .filter-wrap ul li i {
+    float: right;
+    margin: 24px 0 0 12px;
+}
+.bill-content-wrapper .bill-list-wrap .billing-list .bill-mode .list-box {
+    background: none;
+    margin-bottom: -1px;
+}
+.bill-content-wrapper .bill-list-wrap .billing-list .bill-mode .list-box .list-mode-box {
+    position: relative;
+}
+.bill-content-wrapper .bill-list-wrap .list-box .list-mode {
+    cursor: pointer;
+}
+.bill-content-wrapper .bill-list-wrap .billing-list .bill-mode .list-box .list-mode {
+    width: 1078px;
+    height: 169px;
+    margin: 0 auto;
+    padding: 0;
+    border-bottom: 1px solid #e0e0e0;
+    overflow: hidden;
+}
+.home-icons-hot{
+    background-image: url(../../statics/images/home-icons-s5aa6bf0489.png);
+    background-repeat: no-repeat;
+    background-position: -146px -169px;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+.bill-content-wrapper .bill-list-wrap .list-box .list-mode .bill-name {
+    height: 27px;
+}
+.bill-content-wrapper .bill-list-wrap .billing-list .bill-mode .list-box .list-mode .bill-name {
+    margin: 21px 0 0 0;
+    font-size: 18px;
+}
+.bill-content-wrapper .bill-list-wrap .billing-list .bill-mode .list-box .list-mode.hot-mode .bill-name {
+    font-weight: bold;
+    color: #ed714e;
+    position: relative;
+}
+.bill-content-wrapper .bill-list-wrap .list-box .list-mode .bill-name .name {
+    float: left;
+}
+.bill-content-wrapper .bill-list-wrap .billing-list .bill-mode .list-box .list-mode .bill-name .name {
+    padding-left: 25px;
+    color: #555;
+}
+.public-shangicon {
+    background-image: url(../../statics/images/public-s80206b308b.png);
+    background-repeat: no-repeat;
+    background-position: 0 -15px;
+}
+.bill-content-wrapper .bill-list-wrap .list-box .list-mode .bill-name i {
+    height: 17px;
+}
+.bill-content-wrapper .bill-list-wrap .list-box .list-mode .bill-name i.public-shangicon {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 15px !important;
+    height: 15px !important;
+}
+.bill-content-wrapper .bill-list-wrap .list-box .list-mode .bill-name .feature-box {
+    float: left;
+}
+.bill-content-wrapper .bill-list-wrap .list-box .list-mode .bill-name .feature-box .feature {
+    float: left;
+    padding: 2px 0 0 8px;
+}
+.feature span {
+    position: relative;
+}
+.bill-content-wrapper .bill-list-wrap .list-box .list-mode .bill-name .feature-box .feature span {
+    height: 24px;
+    line-height: 24px;
+    padding: 0 10px;
+    border-radius: 3px;
+    border: 1px solid #048eed;
+    color: #048eed;
+    font-size: 14px;
+    font-weight: normal;
+}
+.bill-content-wrapper .bill-list-wrap .list-box .list-mode .bill-name .lastPrize {
+    float: right;
+    margin: 4px 224px 0 0;
+}
+
+
+.ng-hide:not(.ng-hide-animate) {
+    display: none !important;
+}
+
+
+
+/*UL开始*/
+
+.bill-content-wrapper .bill-list-wrap .list-box .list-mode ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: visible;
+    padding-top: 19px;
+}
+.bill-content-wrapper .bill-list-wrap .list-box .list-mode ul li {
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: 0;
+    padding-right: 0;
+    text-align: center;
+    white-space: normal;
+}
+.bill-content-wrapper .bill-list-wrap .list-box .list-mode ul li.invest-btn-box {
+    width: 133px;
+    float: right;
+    padding-left: 0;
+}
+.percentage-box {
+    width: 128px;
+}
+.percentage-box i {
+    float: right;
+    color: #555;
+    margin-top: -6px;
+}
+.percentage {
+    width: 94px;
+    background: #e9e9e9;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    height: 4px;
+}
+.percentage span {
+    border-radius: 20px;
+    left: 0 !important;
+    top: 0 !important;
+    margin: 0 !important;
+    position: absolute;
+}
+.percentage span {
+    height: 5px;
+    background: #048eed;
+}
+.invest-btn{
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    display: block;
+    border-radius: 5px;
+}
+.bill-content-wrapper .bill-list-wrap .list-box .list-mode ul li.invest-btn-box .invest-btn{
+    width: 129px;
+    height: 38px;
+    line-height: 38px;
+    margin-top: 18px;
+    background: #ed714e;
+}
+
+
+/*数字*/
+.bill-content-wrapper .bill-list-wrap .list-box .list-mode ul li {
+    text-align: center;
+    white-space: normal;
+    width: 225px;
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: 0;
+    float: left;
+    padding-left: 0;
+    padding-right: 0;
+}
+.bill-content-wrapper .bill-list-wrap .list-box .list-mode ul li p {
+    font-size: 16px;
+    color: #999;
+    text-align: center;
+}
+.bill-content-wrapper .bill-list-wrap .list-box .list-mode ul li p span {
+    color: #555;
+    margin-right: 5px;
+}
+.bill-content-wrapper .bill-list-wrap .list-box .list-mode ul li p span.rate {
+    color: #ed714e;
+    font-size: 30px;
+}
+.bill-content-wrapper .bill-list-wrap .list-box .list-mode ul li p span b {
+    font-size: 30px;
+}
+.bill-content-wrapper .bill-list-wrap .list-box .list-mode ul li.rate-box i.addrate {
+    color: #ed714e;
+    vertical-align: top;
+    margin-left: -8px;
+    font-size: 30px;
+}
+.bill-content-wrapper .bill-list-wrap .list-box .list-mode ul li i.txt {
+    font-size: 14px;
+    color: #bbb;
+}
+.bill-content-wrapper .bill-list-wrap .list-box .list-mode ul li.line {
+    width: 1px;
+    height: 48px;
+    background: #e5e5e5;
+    font-size: 0;
+    line-height: 0;
+    margin-top: 15px;
+}
+
+
+
+/*活动专享*/
+.bill-content-wrapper .bill-list-wrap .billing-list {
+    background: #fff;
+}
+
+element.style {
+}
+.bill-content-wrapper .bill-list-wrap .billing-list.billing-act {
+    margin-top: 22px;
+}
+.bill-content-wrapper .bill-list-wrap .billing-list .bill-mode {
+    overflow: hidden;
+}
+.bill-content-wrapper .bill-list-wrap .list-title {
+    padding-left: 20px;
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px solid #ececec;
+    background: #fafafa;
+}
+.bill-content-wrapper .bill-list-wrap .list-title a{
+    float: right;
+    margin-right: 30px;
+    font-size: 16px;
+    color: #666;
+}
+.listicon-old {
+    background-position: 0 -95px;
+    height: 15px;
+    width: 8px;
+}
+.bill-content-wrapper .bill-list-wrap .list-title a i{
+    background-image: url(../../statics/images/listicon-sbb37da300f.png);
+    background-repeat: no-repeat;
+    font-family: '宋体';
+    margin-left: 9px;
+    float: right;
+    margin: 23px 0 0 9px;
+}
+.listicon-act {
+    background-image: url(../../statics/images/listicon-sbb37da300f.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    height: 26px;
+    width: 26px;
+}
+.bill-content-wrapper .bill-list-wrap .list-title b {
+    float: left;
+    margin: 16px 8px 0 0;
+}
+.bill-content-wrapper .bill-list-wrap .list-title .filter-wrap {
+    float: left;
+    font-size: 14px;
+    color: #bbb;
+}
+.bill-content-wrapper .bill-list-wrap .list-title .filter-wrap span {
+    float: left;
+    margin-right: 8px;
+}
+.bill-content-wrapper .bill-list-wrap .list-title .filter-wrap ul {
+    float: left;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+}
+.bill-content-wrapper .bill-list-wrap .list-title .filter-wrap ul li {
+     list-style-image: none;
+     list-style-type: none;
+     margin-left: 0;
+     white-space: nowrap;
+     float: left;
+     padding-right: 0;
+    margin-right: 21px;
+    cursor: pointer;
+ }
+.bill-content-wrapper .bill-list-wrap .list-title .filter-wrap ul li:first-child {
+    padding-left: 0;
+}
+.bill-content-wrapper .bill-list-wrap .list-title .filter-wrap ul li.actived{
+    color: #ed714e;
+}
+.bill-down {
+    background-position: 0 -3490px;
+    height: 12px;
+    width: 9px;
+}
+.bill-content-wrapper .bill-list-wrap .list-title .filter-wrap ul li i {
+    float: right;
+    margin: 24px 0 0 12px;
+}
+.bill-content-wrapper .bill-list-wrap .billing-list .bill-mode .list-box {
+    background: none;
+    margin-bottom: -1px;
+}
