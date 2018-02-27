@@ -16,7 +16,9 @@ import javax.annotation.Resource;
  */
 @Service("productServiceImpl")
 public class ProductServiceImpl implements ProductService {
-   @Resource
+
+
+    @Resource
     private ProductMapper productMapper;
     @Override
     public Product findNoviceType(int pro_id) {
@@ -27,4 +29,14 @@ public class ProductServiceImpl implements ProductService {
     public int count() {
         return productMapper.count();
     }
+
+    public Product findHuShenMark(int pro_id) {
+        return productMapper.findHuShenMark(pro_id);
+    }
+
+    @Override
+    public Product findHuShen(int pro_id) {
+        return productMapper.findHuShen(pro_id);
+    }
+
 }
