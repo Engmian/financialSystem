@@ -16,6 +16,7 @@ import javax.annotation.Resource;
  */
 @Service("productServiceImpl")
 public class ProductServiceImpl implements ProductService {
+
     @Resource
     private ProductMapper productMapper;
     @Override
@@ -24,6 +25,10 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public int count() {
+        return productMapper.count();
+    }
+
     public Product findHuShenMark(int pro_id) {
         return productMapper.findHuShenMark(pro_id);
     }

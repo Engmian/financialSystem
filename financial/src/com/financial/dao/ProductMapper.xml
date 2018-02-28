@@ -5,11 +5,16 @@
 <mapper namespace="com.financial.dao.ProductMapper">
 
     <select id="findNoviceType" resultType="Product" parameterType="int">
-        SELECT pro_type,pro_pro,stage,pro_day,pro_fi FROM product WHERE pro_id=#{pro_id};
+        SELECT pro_type,pro_pro,stage,pro_day FROM product WHERE pro_id=#{pro_id};
     </select>
 
+    <select id="count">
+        SELECT count(1) FROM product;
+    </select>
+
+
     <select id="findHuShenMark" resultType="Product" parameterType="int">
-        SELECT pro_type,pro_pro,pro_day,pro_fi FROM product WHERE pro_id=#{pro_id};
+        SELECT pro_type,pro_pro,stage,pro_day,pro_fi FROM product WHERE pro_id=#{pro_id};
     </select>
 
     <select id="findHuShen" resultType="Product" parameterType="int">

@@ -66,6 +66,17 @@
             });
         })
     </script>
+    <script>
+        $(function () {
+            $("#lol").click(function () {
+                if($("#timo").is(':hidden')){
+                    $("#timo").show();
+                }else {
+                    $("#timo").hide();
+                }
+            })
+        })
+    </script>
 </head>
     <body>
     <!--头部-->
@@ -93,17 +104,18 @@
                             <div id="codeMiss"></div>--%>
                         </div>
                         <div id="code" style="display: none"></div>
-                    <div style="display: inline-block;margin-top:30px;margin-left: 60px">
-                        <input type="password" name="uPwd" placeholder="请输入密码"  style="width: 300px;height: 30px;color: dimgray;border: 1px darkgray solid" >
-                    </div>
                         <div style="display: inline-block;margin-top:30px;margin-left: 60px">
+                            <input type="password" name="uPwd" placeholder="请输入密码"  style="width: 300px;height: 30px;color: dimgray;border: 1px darkgray solid" >
+                        </div>
+                        <div style="margin-top:30px;margin-left: 60px"><a href="javascript:void(0);" id="lol" style="color: blue">推荐人邀请码/手机号(选填)</a></div>
+                        <!-- 此处后台已传“推荐人不存在”，请前端务必调整一下格式 -->
+                        <div style="display: inline-block;margin-top:30px;margin-left: 60px" id="timo">
                             <input type="password" name="invite" placeholder="推荐人电话号码"  style="width: 300px;height: 30px;color: dimgray;border: 1px darkgray solid" >
                         </div>
-                        <!-- 此处后台已传“推荐人不存在”，请前端务必调整一下格式 -->
                         <%--<div>${invite}</div>--%>
-                    <div style="display: inline-block;margin-top: 30px;margin-left: 60px;">
-                        <input type="submit" value="登录" id="submit" style="color:white;text-align: center;font-size: 18px;background-color:silver;width: 300px;height: 40px;border: none">
-                    </div>
+                        <div style="display: inline-block;margin-top: 30px;margin-left: 60px;">
+                            <input type="submit" value="登录" id="submit" style="color:white;text-align: center;font-size: 18px;background-color:silver;width: 300px;height: 40px;border: none">
+                        </div>
                     </form>
                     <div style="margin-left: 60px; margin-top: 30px"><span style="color: #999999;font-size: 14px">已经有账号?</span><span style="color: grey"> | </span> <a href="${pageContext.request.contextPath}/loginController/gotoLogin" style="color: #007aff;font-size: 14px">立即登陆</a></div>
                 </div>
@@ -160,7 +172,7 @@
     getCode.onclick=function () {
         var uPhone=$("#uPhone").val();
         if(uPhone == null || uPhone=="") {
-            alert("清先输入手机号码")
+            alert("请先输入手机号码")
             return;
         }else{
             if (flag < 120){

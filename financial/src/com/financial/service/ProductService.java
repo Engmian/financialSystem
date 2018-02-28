@@ -9,6 +9,10 @@ import org.apache.ibatis.annotations.Param;
  * @Description:
  */
 public interface ProductService {
+
+
+    //条数,用于分页
+    public int count();
     //新手类型
     public Product findNoviceType(@Param("pro_id")int pro_id);
     //沪深类型
