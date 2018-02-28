@@ -21,6 +21,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+      <link rel="stylesheet" href="../../statics/css/shang.css">
+      <link rel="stylesheet" href="../../statics/css/zhongbankBillList.css">
+      <link rel="stylesheet" href="../../statics/css/xia.css">
 
   </head>
   
@@ -284,8 +287,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
                                 <!-- ngRepeat: item in youList -->
                                 <!--这里c:foreach-->
-                                <em>傻瓜  注意cforeach上面导入的user实体</em>
-                                <c:forEach var="us" items="${li }" varStatus="cishu">
+                               <c:forEach var="us" items="${productsList}" varStatus="cishu">
                                 	<div class="list-mode-box ng-scope" ng-repeat="item in youList" style="">
                                     <!-- ngIf: item.type != 1 -->
                                     <div class="list-mode hot-mode new-mode ng-scope" ui-sref="main.billDetail({ id: item.id })" ng-class="{6: 'end-mode',7: 'end-mode',8: 'end-mode',9: 'end-mode'}[item.status]" ng-if="item.type != 1" href="/main/billDetail?id=5788">
@@ -300,7 +302,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                                 <!-- ngIf: item.billType == 1 -->
                                                 <i class="public-shangicon ng-scope" ng-if="item.billType == 1"></i>
                                                 <!-- end ngIf: item.billType == 1 -->
-                                                沪深60第216期
+                                                <c:out value="${us.pro_name}"></c:out>
                                                 <!--<span class="honour-tip" ng-show="item.accept != undefined && item.accept != ''"><i class="common-honour-icon"></i>{{item.accept}}</span>-->
                                             </div>
                                             <div class="feature-box">
@@ -347,7 +349,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                             <li class="rate-box">
                                                 <!-- 双蛋利率 -->
                                                 <p>
-                                                    <span class="rate"><b class="ng-binding">8</b>%</span>
+                                                    <span class="rate"><b class="ng-binding">${us.pro_pro}</b>%</span>
                                                     <!-- 双旦红包加息60 -->
                                                     <!-- ngIf: shuangDanActivity && item.deadline == 60 && map.activity_60>0 -->
                                                     <!-- ngIf: shuangDanActivity && item.deadline == 180 && map.activity_180>0 -->
@@ -359,7 +361,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                             </li>
                                             <li class="line"></li>
                                             <li class="term-box">
-                                                <p><span><b class="ng-binding">60</b>天</span></p>
+                                                <p><span><b class="ng-binding">${us.pro_day}</b>天</span></p>
                                                 <i class="txt">期限</i>
                                             </li>
                                             <li class="line"></li>
@@ -369,7 +371,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                             </li>
                                             <li class="line"></li>
                                             <li class="total-box">
-                                                <p><span><b class="ng-binding">&nbsp;300,000</b>元</span></p>
+                                                <p><span><b class="ng-binding">&nbsp;${us.pro_cim_toString}</b>元</span></p>
                                                 <i class="txt">总额</i>
                                             </li>
                                             <li class="line"></li>

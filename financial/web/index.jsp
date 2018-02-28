@@ -14,8 +14,17 @@
 <html>
   <head>
     <title>$Title$</title>
+    <script>
+      function tiaozhuan() {
+          window.location="main/home";
+      }
+    </script>
   </head>
+<<<<<<< HEAD
   <body onload="showMain()">
+=======
+  <body onload="tiaozhuan()">
+>>>>>>> origin/master
   $END$
   </body>
 </html>
