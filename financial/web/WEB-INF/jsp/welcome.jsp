@@ -15,5 +15,7 @@
 <body>
 welcome back
 以收益${platformData.profit}
+
+${noviceType.pro_pro};
 </body>
 </html>

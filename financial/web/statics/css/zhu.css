@@ -207,7 +207,7 @@ b{
 }
 .top-global-wrapper .top-content .top-nav span {
     margin: 0 -3px 0 12px;
-    font-family: 'ËÎÌå';
+    font-family: 'ï¿½ï¿½ï¿½ï¿½';
     color: #ccc;
 }
 .top-global-wrapper .top-content .top-nav a.padR0{
@@ -612,7 +612,7 @@ b{
     line-height: 26px;
     font-size: 12px;
 }
-/*¹«¸æÀ¸ÒÔÏÂ*/
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 .home-content-wrapper {
     width: 100%;
     padding-bottom: 36px;
@@ -685,7 +685,7 @@ b{
     width: 323px;
 }
 
-/*ÐÂÄê¿ìÀÖ*/
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 .home-content-wrapper .feature-wrap .feature-list {
     display: inline-block;
     vertical-align: top;
@@ -739,7 +739,7 @@ b{
     overflow: hidden;
 }
 
-/*Íê*/
+/*ï¿½ï¿½*/
 
 .pro-wrapper {
     width: 1200px;
@@ -985,14 +985,15 @@ b{
     padding: 33px 0 9px;
     margin: 0 auto;
 }
-.product table td div.mode .percentage-box .percentage {
+.product table td div.mode .percentage-box.percentage {
     width: 170px;
     background: #e4e4e4;
 }
-.product table td div.mode .percentage-box.homepercent .percentage.homeper {
+.product table td div.mode .percentage-box.homepercent.percentage.homeper {
     height: 4px;
     border-radius: 0;
 }
+
 .percentage span {
     /*left: 0 !important;*/
     /*top: 0 !important;*/
@@ -1041,7 +1042,7 @@ b{
     margin: 0 auto;
 }
 
-/*Äê¶ÈÐÂÈñ*/
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 .pro-wrapper .pro-banner {
 
     /*height: 300px;*/

@@ -13,14 +13,22 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class Test {
     public static void main(String[] args) {
-        ApplicationContext act = new ClassPathXmlApplicationContext("applicationContext-mybatis.xml");
-        /*UserService userService =(UserService) act.getBean("userServiceImpl");
+        /*ApplicationContext act = new ClassPathXmlApplicationContext("applicationContext-mybatis.xml");
+         *//*UserService userService =(UserService) act.getBean("userServiceImpl");
         String useruphone = userService.findUseruphone("18588450732");
 
-        System.out.println(useruphone);*/
+        System.out.println(useruphone);*//*
 
         ProductService productService = (ProductService)act.getBean("productServiceImpl");
-        Product noviceType = productService.findNoviceType(1);
-        System.out.println(noviceType.getPro_day());
+        *//*Product noviceType = productService.findNoviceType(1);*//*
+        Product huShenMark = productService.findHuShen(3);
+        System.out.println(huShenMark.getPro_day());*/
+
+        StringBuffer stringBuffer= new StringBuffer();
+        StringBuffer strRandom =null;
+        for (int i = 0; i < 4; i++) {
+            strRandom = stringBuffer.append((int)(Math.random() * 10));
+        }
+        System.out.println(strRandom.toString());
     }
 }

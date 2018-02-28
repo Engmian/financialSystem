@@ -10,8 +10,19 @@
 <head>
     <title>沪深理财-网贷投资理财</title>
     <link rel="stylesheet" href="../../statics/css/zhu.css">
-    <link rel="stylesheet" type="text/css" href="../../statics/js/jquery.easyui.min.js">
     <script type="text/javascript" src="../../statics/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../statics/js/jquery.easyui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://www.java1234.com/">
+    <script type="text/javascript" src="../../statics/js/counter.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        var longWidth=80;
+        var shortWidth=longWidth;
+        $(".span_shree").animate({
+            width:shortWidth+"px"
+        },'slow');
+    </script>
+
 </head>
 <body>
 <!--客服-->
@@ -186,6 +197,7 @@
                     <span>
                             ￥
                         <h2 class="timr currency count-title" id="count-number">
+
                             ${platformData.cumulative_investment}
 
                         </h2>
@@ -395,7 +407,7 @@
                                         </div>
                                         <div class="percentage-box homepercent">
                                             <div class="percentage homeper">
-                                                <span style="width: 7%"></span>
+                                                <span style="width: 7%" id="span_shree"></span>
                                             </div>
                                         </div>
                                         <div class="deadline">
@@ -424,7 +436,7 @@
                                         </div>
                                         <div class="percentage-box homepercent">
                                             <div class="percentage homeper">
-                                                <span style="width: 7%"></span>
+                                                <span style="width: 7%" id="span30"></span>
                                             </div>
                                         </div>
                                         <div class="deadline">
