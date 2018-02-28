@@ -118,8 +118,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <div class="nav-box" ng-show="!noMenu">
                     <div>
                         <ul>
-                            <li><a ng-class="{true: 'active'}[activeNav == 'home']" ng-click="activeNav='home'" href="/main/home" class="active" style="">首页</a></li>
-                            <li><a ng-class="{true: 'active'}[activeNav == 'bill']" ng-click="activeNav='bill'" href="/main/bankBillList" class="" style="">我要理财</a></li>
+                            <li><a ng-class="{true: 'active'}[activeNav == 'home']" ng-click="activeNav='home'" href="/main/home" class="" style="">首页</a></li>
+                            <li><a ng-class="{true: 'active'}[activeNav == 'bill']" ng-click="activeNav='bill'" href="/main/bankBillList" class="active" style="">我要理财</a></li>
                             <!--exclusiveUser值为2 是恩福产品-->
                             <li ng-show="exclusiveUser == 2" class="ng-hide"><a ng-class="{true: 'active'}[activeNav == 'enfu']" ng-click="activeNav='enfu'" href="/main/enfu">专属产品</a></li>
                             <!--exclusiveUser值为1 是专属用户-->

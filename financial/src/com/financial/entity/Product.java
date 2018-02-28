@@ -28,11 +28,10 @@ public class Product implements Serializable{
     private String pro_fi;//投资条件
     private int pro_canUser;//是否可以投资
     private int stage;//第几期
-<<<<<<< HEAD
+
     private double platform_discount;//平台贴息
-=======
+
     private String pro_cim_toString;//数字表达式
->>>>>>> origin/master
 
     public int getPro_id() {
         return pro_id;
@@ -162,7 +161,6 @@ public class Product implements Serializable{
         this.pro_canUser = pro_canUser;
     }
 
-<<<<<<< HEAD
     public int getStage() {
         return stage;
     }
@@ -177,7 +175,7 @@ public class Product implements Serializable{
 
     public void setPlatform_discount(double platform_discount) {
         this.platform_discount = platform_discount;
-=======
+    }
     public int getPro_name() {
         return pro_name;
     }
@@ -192,6 +190,6 @@ public class Product implements Serializable{
 
     public void setPro_cim_toString(String pro_cim_toString) {
         this.pro_cim_toString = pro_cim_toString;
->>>>>>> origin/master
+
     }
 }

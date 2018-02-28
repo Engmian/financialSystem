@@ -1,7 +1,9 @@
 package com.financial.controllers;
 
+import com.financial.entity.Action;
 import com.financial.entity.Platform_data;
 import com.financial.entity.Product;
+import com.financial.service.ActionService;
 import com.financial.service.PlatformService;
 import com.financial.service.ProductService;
 import com.financial.utils.PageUtils;
@@ -26,6 +28,8 @@ public class mainController {
     private PlatformService platformService;
     @Resource
     private ProductService productService;
+    @Resource
+    private ActionService actionService;
 
     @RequestMapping("/home")
     public String goHome(Model model){
@@ -65,5 +69,13 @@ public class mainController {
         }
         model.addAttribute("productsList", products);
         return "bankBillList";
+    }
+
+    @RequestMapping("/actcenter")
+    public String goActcenter(Model model){
+        List<Action> actions = actionService.selectActions();
+
+        model.addAttribute("actions",actions);
+        return "actcenter";
     }
 }

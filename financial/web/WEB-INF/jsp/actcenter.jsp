@@ -84,14 +84,14 @@
                 <div class="nav-box" ng-show="!noMenu">
                     <div>
                         <ul>
-                            <li><a ng-class="{true: 'active'}[activeNav == 'home']" ng-click="activeNav='home'" href="/main/home" class="active" style="">首页</a></li>
+                            <li><a ng-class="{true: 'active'}[activeNav == 'home']" ng-click="activeNav='home'" href="/main/home" class="" style="">首页</a></li>
                             <li><a ng-class="{true: 'active'}[activeNav == 'bill']" ng-click="activeNav='bill'" href="/main/bankBillList" class="" style="">我要理财</a></li>
                             <!--exclusiveUser值为2 是恩福产品-->
                             <li ng-show="exclusiveUser == 2" class="ng-hide"><a ng-class="{true: 'active'}[activeNav == 'enfu']" ng-click="activeNav='enfu'" href="/main/enfu">专属产品</a></li>
                             <!--exclusiveUser值为1 是专属用户-->
                             <li ng-show="exclusiveUser == 1" class="ng-hide"><a ng-class="{true: 'active'}[activeNav == 'exclusivePro']" ng-click="activeNav='exclusivePro'" href="/main/exclusiveBillList">专属产品</a></li>
                             <li><a ng-class="{true: 'active'}[activeNav == 'help']" ng-click="activeNav='help'" href="/main/guarantee" class="" style="">安全保障</a></li>
-                            <li><a ng-class="{true: 'active'}[activeNav == 'actcenter']" ng-click="activeNav='actcenter'" href="/main/actcenter" class="" style="">活动中心</a></li>
+                            <li><a ng-class="{true: 'active'}[activeNav == 'actcenter']" ng-click="activeNav='actcenter'" href="/main/actcenter" class="active" style="">活动中心</a></li>
                             <!--<li><a ng-class="{true: 'active'}[activeNav == 'guild']" ng-click="activeNav='guild'" href="{{a|webIE8}}main/guide">新手指引</a></li>-->
                             <!--<li class="account" ng-mouseenter="xxpl=true" ng-mouseleave="xxpl=false"><a ng-class="{true: 'active'}[activeNav == 'new']" ng-click="activeNav='new'" href="{{a|webIE8}}main/jt/JSGK?menuName=JSGK"><i class="drop"></i>信息披露</a>
                                 <div class="con" ng-show="xxpl">
@@ -175,15 +175,17 @@
 
                     <!-- ngRepeat: info in infolist -->
                     <!--cforeach包围-->
-                    <c:forEach var="us" items="${productsList}" varStatus="cishu">
+                    <c:forEach var="acts" items="${actions}" varStatus="cishu">
                         <div class="list clearfix ng-scope" ng-repeat="info in infolist" style="">
                             <i class="lineIcon"></i>
-                            <div class="up"><img src="https://hushenlc.cn/upload/productPic/2018-01/26/20180126006cd7f8-b2df-4a7c-ad03-94fa13f9eb73.png"></div>
+                           <div class="up"><img src="../../statics/images/${acts.act_pic}.png"></div>
                             <div class="down">
-                                <p class="title ng-binding">组队夺金</p>
+                                <p class="title ng-binding">${acts.act_name}</p>
                                 <p class="time ng-binding">
-                                    活动时间：2018.01.05<!-- ngIf: info.endTime!=undefined && info.endTime!='' -->
-                                    <span ng-if="info.endTime!=undefined &amp;&amp; info.endTime!=''" class="ng-binding ng-scope">-2018.02.05</span><!-- end ngIf: info.endTime!=undefined && info.endTime!='' --><!-- ngIf: info.endTime==undefined || info.endTime=='' -->
+                                    活动时间：<fmt:formatDate value="${acts.act_time_start}" pattern="yyyy.MM.dd"/>
+                                    <!-- ngIf: info.endTime!=undefined && info.endTime!='' -->
+                                    <span ng-if="info.endTime!=undefined &amp;&amp; info.   endTime!=''" class="ng-binding ng-scope">-
+                                            <fmt:formatDate value="${acts.act_time_end}" pattern="yyyy.MM.dd"/></span><!-- end ngIf: info.endTime!=undefined && info.endTime!='' --><!-- ngIf: info.endTime==undefined || info.endTime=='' -->
                                 </p>
                                 <!-- ngIf: info.pcUrl!=undefined && info.pcUrl!='' --><a class="todetail ng-scope" href="https://hushenlc.cn/zudui" ng-if="info.pcUrl!=undefined &amp;&amp; info.pcUrl!=''">查看详情</a><!-- end ngIf: info.pcUrl!=undefined && info.pcUrl!='' -->
                             </div>
