@@ -320,7 +320,7 @@
                             期期送好礼
                         </div>
                     </div>
-                    <div class="innerCnt act ng-scope">
+                   <%-- <div class="innerCnt act ng-scope">
                         <div class="redPacket margin0">
                             <img src="../../statics/images/20180122acc0bdd1-a4d7-4833-bdfb-40748d1a006a.png">
                         </div>
@@ -359,7 +359,7 @@
                                 </tbody>
                             </table>
                         </div>
-                    </div>
+                    </div>--%>
                 </div>
             </div>
         </div>
