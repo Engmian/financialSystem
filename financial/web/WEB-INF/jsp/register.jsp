@@ -87,7 +87,7 @@
         <div id="body">
             <div id="login-box">
                 <div id="login-box-title">
-                    <div style="width: 40px;height: 1px;background-color: #999999; float: left;margin-top: 40px;"></div><div id="dd" style="margin-left: 5px">会员登录</div>
+                    <div style="width: 40px;height: 1px;background-color: #999999; float: left;margin-top: 40px;"></div><div id="dd" style="margin-left: 5px">会员注册</div>
                 </div>
                 <div style="width: 275px;height: 1px;background-color: #999999; float: right;margin-top: -30px"></div>
                 <div id="login-box-text">
@@ -107,7 +107,7 @@
                         <div style="display: inline-block;margin-top:30px;margin-left: 60px">
                             <input type="password" name="uPwd" placeholder="请输入密码"  style="width: 300px;height: 30px;color: dimgray;border: 1px darkgray solid" >
                         </div>
-                        <div style="margin-top:30px;margin-left: 60px"><a href="javascript:void(0);" id="lol" style="color: blue">推荐人邀请码/手机号(选填)</a></div>
+                        <div style="margin-top:10px;margin-left: 60px;height: 10px;"><a href="javascript:void(0);" id="lol" style="color: blue">推荐人邀请码/手机号(选填)</a></div>
                         <!-- 此处后台已传“推荐人不存在”，请前端务必调整一下格式 -->
                         <div style="display: inline-block;margin-top:30px;margin-left: 60px" id="timo">
                             <input type="password" name="invite" placeholder="推荐人电话号码"  style="width: 300px;height: 30px;color: dimgray;border: 1px darkgray solid" >

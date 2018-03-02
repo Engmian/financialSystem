@@ -14,6 +14,15 @@ public class Platform_data {
     private double cumulative_investment;//累计投资金额（根据不同的每个人投资金额累加，获得累计总额）
     private double profit; //已为用户赚取收益（总的收益-累计投资金额）
     private int platform_use; //平台用户人数（平台用户总人数）
+    private double platform_discount;
+
+    public double getPlatform_discount() {
+        return platform_discount;
+    }
+
+    public void setPlatform_discount(double platform_discount) {
+        this.platform_discount = platform_discount;
+    }
 
     public int getPid() {
         return pid;

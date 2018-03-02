@@ -28,7 +28,9 @@ public class Product implements Serializable{
     private String pro_fi;//投资条件
     private int pro_canUser;//是否可以投资
     private int stage;//第几期
+
     private double platform_discount;//平台贴息
+
     private String pro_cim_toString;//数字表达式
 
 
@@ -184,11 +186,13 @@ public class Product implements Serializable{
         this.platform_discount = platform_discount;
     }
 
+
     public String getPro_cim_toString() {
         return pro_cim_toString;
     }
 
     public void setPro_cim_toString(String pro_cim_toString) {
         this.pro_cim_toString = pro_cim_toString;
+
     }
 }
