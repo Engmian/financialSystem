@@ -506,6 +506,7 @@ b{
 .globalheader-wrap .nav-box ul li:first-child {
     padding-left: 0;
 }
+
 .globalheader-wrap .nav-box ul a.active{
     color: #529cf7;
     text-decoration: none;

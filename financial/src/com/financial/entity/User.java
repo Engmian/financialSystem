@@ -30,4 +30,13 @@ public class User implements Serializable {
     public void setUpwd(String uPwd) {
         this.uPwd = uPwd;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "uid=" + uid +
+                ", uPhone='" + uPhone + '\'' +
+                ", uPwd='" + uPwd + '\'' +
+                '}';
+    }
 }

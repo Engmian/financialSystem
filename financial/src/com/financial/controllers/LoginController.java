@@ -15,8 +15,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import javax.jms.Session;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
@@ -36,7 +38,7 @@ public class LoginController {
     public String getLogin(@RequestParam String uPwd,@RequestParam String uPhone, HttpServletRequest request){
 
         String md5uPwd= MD5Utils.getMd5(uPwd);
-        User user_login = userService.findUserList(md5uPwd,uPhone);
+        User user_login = userService.findUserList(uPhone,md5uPwd);
         //如果登录失败则调回到登录页面，重新登录
         if (user_login == null) {
             request.getSession().setAttribute("prompt","账号或密码错误");
@@ -44,7 +46,7 @@ public class LoginController {
         }else {
             //登录成功之后，将对象存在session会话中，方便后期用户浏览页面或者支付之类的不需要登录
             request.getSession().setAttribute("user_Login",user_login);
-            return "welcome";
+            return "mainPage";
         }
     }
 
@@ -52,7 +54,7 @@ public class LoginController {
     @RequestMapping("/exitUser_Login")
     public String exitUser_Login(HttpServletRequest request){
         request.getSession().invalidate();
-        return "login";
+        return "mainPage";
     }
 
 
