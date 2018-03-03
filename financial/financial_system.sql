@@ -16,6 +16,19 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`financial_system` /*!40100 DEFAULT CHAR
 
 USE `financial_system`;
 
+/*Table structure for table `action` */
+
+DROP TABLE IF EXISTS `action`;
+
+CREATE TABLE `action` (
+  `act_name` varchar(50) DEFAULT NULL COMMENT '活动名字',
+  `act_time_start` date DEFAULT NULL COMMENT '活动开始时间',
+  `act_time_end` date DEFAULT NULL COMMENT '活动结束时间',
+  `act_pic` varchar(50) DEFAULT NULL COMMENT '活动配图名称'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='活动表';
+
+/*Data for the table `action` */
+
 /*Table structure for table `extra` */
 
 DROP TABLE IF EXISTS `extra`;
@@ -111,6 +124,23 @@ CREATE TABLE `roll_pic` (
 /*Data for the table `roll_pic` */
 
 insert  into `roll_pic`(`pid`,`rp_name`,`rp_desc`,`rp_url`) values (1,'juhua.jpg','菊花','/static/image');
+
+/*Table structure for table `temporary_account` */
+
+DROP TABLE IF EXISTS `temporary_account`;
+
+CREATE TABLE `temporary_account` (
+  `taid` int(11) NOT NULL AUTO_INCREMENT,
+  `total_account` int(20) DEFAULT NULL COMMENT '账户总额',
+  `monetary` int(20) DEFAULT NULL COMMENT '消费金额',
+  `incomes` int(20) DEFAULT NULL COMMENT '待收益数',
+  `uPhone` varchar(24) NOT NULL,
+  PRIMARY KEY (`taid`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+/*Data for the table `temporary_account` */
+
+insert  into `temporary_account`(`taid`,`total_account`,`monetary`,`incomes`,`uPhone`) values (1,100000,5000,3,'18588450732'),(3,1000000,50000,4,''),(4,5780000,432000,2,'15971627982');
 
 /*Table structure for table `user_info` */
 

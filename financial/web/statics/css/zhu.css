@@ -251,16 +251,6 @@ b{
 }
 
 
-
-
-
-
-
-
-
-
-
-
 .home-banner {
     width: 100%;
     height: 350px;
@@ -1376,5 +1366,16 @@ b{
     padding-top: 10px;
     font-size: 14px;
 }
+/*2018/3/2 -- 14:47 by deng*/
 
-*
+.top-global-wrapper .top-content .top-nav a:hover{
+    text-decoration: underline;
+    color:#529cf7;!important
+}
+.globalheader-wrap .nav-box ul a:hover{
+    color:#529cf7;!important
+}
+
+.news-wrap .news-con .news .con ul li a:hover{
+    text-decoration: underline;
+}

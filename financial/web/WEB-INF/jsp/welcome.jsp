@@ -14,8 +14,10 @@
 </head>
 <body>
 welcome back
-以收益${platformData.profit}
-
-${noviceType.pro_pro};
+以收益${user_Login.uphone}
+<c:forEach items="${dateTitleList}" var="dateTitleList" varStatus="s">
+    ${dateTitleList.type}
+    ${dateTitleList.dateTime}
+</c:forEach>
 </body>
 </html>

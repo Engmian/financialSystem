@@ -7,7 +7,9 @@ import com.aliyuncs.dysmsapi.model.v20170525.SendSmsResponse;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
+import com.financial.entity.Temporary_account;
 import com.financial.entity.User;
+import com.financial.service.TemporaryAccountService;
 import com.financial.service.UserService;
 import com.financial.utils.MD5Utils;
 import com.financial.utils.SendCode;
@@ -26,6 +28,8 @@ import javax.servlet.http.HttpServletRequest;
 public class LoginController {
     @Resource
     private UserService userService;
+    @Resource
+    private TemporaryAccountService temporaryAccountService;
 
     //跳转到登录页面（后面可以根据登录按钮链接到此）
     @RequestMapping("/gotoLogin")
@@ -46,7 +50,13 @@ public class LoginController {
         }else {
             //登录成功之后，将对象存在session会话中，方便后期用户浏览页面或者支付之类的不需要登录
             request.getSession().setAttribute("user_Login",user_login);
-            return "mainPage";
+            //登录成功之后，将该用户的余额，交易笔数显示
+            Temporary_account temporary_account = temporaryAccountService.findTemporary_account(uPhone);
+            double total_account = temporary_account.getTotal_account()-temporary_account.getMonetary();
+            int incomes = temporary_account.getIncomes();
+            request.getSession().setAttribute("total_account",total_account);
+            request.getSession().setAttribute("incomes",incomes);
+            return "index";
         }
     }
 
@@ -54,7 +64,7 @@ public class LoginController {
     @RequestMapping("/exitUser_Login")
     public String exitUser_Login(HttpServletRequest request){
         request.getSession().invalidate();
-        return "mainPage";
+        return "index";
     }
 
 

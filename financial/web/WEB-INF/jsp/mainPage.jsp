@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.financial.entity.User" %><%--
   Created by IntelliJ IDEA.
   User: 42958
   Date: 2018/2/24
@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <html>
 <head>
     <title>沪深理财-网贷投资理财</title>
@@ -14,7 +16,7 @@
     <script type="text/javascript" src="../../statics/js/jquery.easyui.min.js"></script>
     <link rel="stylesheet" type="text/css" href="http://www.java1234.com/">
     <script type="text/javascript" src="../../statics/js/counter.js"></script>
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"/>
     <script>
         var longWidth=80;
         var shortWidth=longWidth;
@@ -55,7 +57,23 @@
 
             <!-- ngIf: (a | isRegister).register -->
             <!-- ngIf: (a | isRegister).register -->
-            <a ng-show="(a | isRegister).register" ng-click="userOut()" href="#" class="top-quit ng-hide" style="">退出</a>
+            <script>
+                console.log(${user_Login.uphone});
+                $(function () {
+                var value=${user_Login.uphone};
+                if(value!=null && value!=""){
+                    var ll = $('<a href="#" class="top-quit ng-show mouse_in" style="">亲爱的用户</a>，'+
+                        '<a href="${pageContext.request.contextPath}/loginController/exitUser_Login" class="top-quit ng-show mouse_in" style="">退出</a>');
+                  ll.appendTo($(".top-nav"));
+                }
+                });
+            </script>
+            <%--<c:if test="${user_Login.uphone}!=null && ${user_Login.uphone}!=''">
+            &lt;%&ndash;<a ng-show="(a | isRegister).register" ng-click="userOut()" href="exitUser_Login" class="top-quit ng-hide" style="">退出</a>&ndash;%&gt;
+
+            <a href="#" class="top-quit ng-show" style="">亲爱的用户</a>，
+            <a href="exitUser_Login" class="top-quit ng-show" style="">退出</a>
+            </c:if>--%>
         </div>
     </div>
 </div>
@@ -68,17 +86,31 @@
         </div>
         <div class="nav-box" ng-show="!noMenu">
             <div>
-                <ul>
+                <ul id="success">
                     <li><a ng-class="{true: 'active'}[activeNav == 'home']" ng-click="activeNav='home'" href="/main/home" class="active">首页</a></li>
                     <li><a ng-class="{true: 'active'}[activeNav == 'bill']" ng-click="activeNav='bill'" href="/main/bankBillList">我要理财</a></li>
-                    <li ng-show="exclusiveUser == 2" class="ng-hide"><a ng-class="{true: 'active'}[activeNav == 'enfu']" ng-click="activeNav='enfu'" href="/main/enfu">专属产品</a></li>
-                    <li ng-show="exclusiveUser == 1" class="ng-hide"><a ng-class="{true: 'active'}[activeNav == 'exclusivePro']" ng-click="activeNav='exclusivePro'" href="/main/exclusiveBillList">专属产品</a></li>
-                    <li><a ng-class="{true: 'active'}[activeNav == 'help']" ng-click="activeNav='help'" href="/main/guarantee">安全保障</a></li>
+                    <%--<li ng-show="exclusiveUser == 2" class="ng-hide"><a ng-class="{true: 'active'}[activeNav == 'enfu']" ng-click="activeNav='enfu'" href="/main/enfu">专属产品</a></li>--%>
+                    <%--<li ng-show="exclusiveUser == 1" class="ng-hide"><a ng-class="{true: 'active'}[activeNav == 'exclusivePro']" ng-click="activeNav='exclusivePro'" href="/main/exclusiveBillList">专属产品</a></li>--%>
+                    <li><a ng-class="{true: 'active'}[activeNav == 'help']" ng-click="activeNav='help'" href="/main/home">安全保障</a></li>
                     <li><a ng-class="{true: 'active'}[activeNav == 'actcenter']" ng-click="activeNav='actcenter'" href="/main/actcenter">活动中心</a></li>
-                    <li class="account"><a ng-class="{true: 'active'}[activeNav == 'new']" ng-click="activeNav='new'" href="/main/jt/GSJJ?menuName=GSJJ">信息披露</a></li>
+                    <li class="account"><a ng-class="{true: 'active'}[activeNav == 'new']" ng-click="activeNav='new'" href="#">信息披露</a></li>
                 </ul>
-                <div class="nologin ng-scope" ng-if="!(a | isRegister).register">
-                    <a href="${pageContext.request.contextPath}/loginController/gotoLogin" class="login">登录</a>
+                <script>
+                    var uPhone= "${user_Login.uphone}";
+                    console.log(uPhone+"---------");
+                    $(function () {
+                        if(uPhone==null || uPhone==""){
+                            $("#login_show").show();
+                        }else {
+                            $("#login_show").hide();
+                            var createDiv= $("<li class='.globalheader-wrap .nav-box ul li'><a href='#' class='.globalheader-wrap .nav-box ul a'>我的账户</a></li>");
+                            createDiv.appendTo($("#success"));
+                        }
+                    })
+                </script>
+
+                <div class="nologin ng-scope" ng-if="!(a | isRegister).register" id="login_show">
+                    <a href="${pageContext.request.contextPath}/loginController/gotoLogin" class="login" >登录</a>
                     <a href="${pageContext.request.contextPath}/registerController/gotoRegister" class="register">注册送大礼</a>
                 </div>
             </div>
@@ -105,20 +137,42 @@
 <!--轮播图-->
 <div class="home-banner">
     <div class="banner-box">
-        <div class="hello-box login-false">
-            <div class="login my-box">
+        <div class="hello-box">
+            <script>
+                console.log(${user_Login.uphone});
+                var str="${user_Login.uphone}";
+                $(function () {
+                    if(str!= null && str != ""){
+                        $("#login_true").show();
+                        $("#login_false").hide();
+                    }else{
+                        $("#login_true").hide();
+                        $("#login_false").show();
+                    }
+                })
+            </script>
+            <div id="login_true" class="my-box">
                 <!-- ngIf: user.realName != undefined -->
-                <!-- ngIf: user.realName == undefined --><div ng-if="user.realName == undefined" class="hello ng-binding ng-scope">欢迎您，*****！</div><!-- end ngIf: user.realName == undefined -->
+
+                <!-- ngIf: user.realName == undefined --><div ng-if="user.realName == undefined" id="welcome-strs" class="hello ng-binding ng-scope"></div><!-- end ngIf: user.realName == undefined -->
+                <script>
+                    var str="${user_Login.uphone}";
+                    var strs = str.substring(0,3)+"*****"+str.substring(8,11);
+
+                    /*var llo= $("#welcome-strs").get(0);
+                    llo.innerHTML="欢迎您，"+strs+"!";*/
+                    $("#welcome-strs").html("欢迎您，"+strs+"!");
+                </script>
                 <div class="my-info">
                     <div class="my-account">
-                        <span ng-show="showBalance" class="balance">账户余额：<b class="ng-binding"></b>元</span>
+                        <span ng-show="showBalance" class="balance">账户余额：<b class="ng-binding">${total_account}</b>元</span>
                     </div>
-                    <div class="account-tip">近30天共有<b class="ng-binding"></b>笔待收收益</div>
+                    <div class="account-tip">近30天共有<b class="ng-binding" style="color: red;font-weight: bold">${incomes}</b>笔待收收益</div>
                 </div>
-                <a href="/main/myAccount/accountHome" class="hello-btn">我的账户</a>
-                <div class="operate"><a href="" ng-click="userOut('userOut')" class="quit">安全退出</a></div>
+                <a href="#" class="hello-btn" id="myContent">我的账户</a>
+                <div class="operate"><a href="${pageContext.request.contextPath}/loginController/exitUser_Login" ng-click="userOut('userOut')" class="quit">安全退出</a></div>
             </div>
-            <div class="nologin my-box nologin">
+            <div id="login_false" class="my-box">
                 <!-- <div class="hello">预期最高年化收益<strong><i>可达</i><span>13</span>%</strong></div> -->
                 <div class="hello welcome">
                     <!--<i>——</i>&nbsp;&nbsp;欢迎加入沪深理财&nbsp;&nbsp;<i>——</i>-->
@@ -129,7 +183,7 @@
                 <a href="${pageContext.request.contextPath}/registerController/gotoRegister" class="register" style="width: 214px!important;">注册领288红包</a>
                 <!-- <i ng-if="!(a | isRegister).register" class="home-icon"></i> -->
                 <div class="operate">
-                    已有账号？<a href="${pageContext.request.contextPath}/loginController/gotoLogin" class="">立即登录</a></div>
+                    已有账号？<a href="${pageContext.request.contextPath}/loginController/gotoLogin"  style="color: #fff3f3">立即登录</a></div>
             </div>
         </div>
     </div>
@@ -196,10 +250,7 @@
                     累计投资金额
                     <span>
                             ￥
-                        <h2 class="timr currency count-title" id="count-number">
-
-                            ${platformData.cumulative_investment}
-
+                        <h2 class="timer timr currency count-title" id="count-number">
                         </h2>
                             元
                         </span>
@@ -208,14 +259,14 @@
                     已为用户赚取利益
                     <span>
                             ￥
-                            <h2 class="timr currency count-title" id="count-number2">${platformData.profit}</h2>
+                            <h2 class="timer timr currency count-title" id="count-number2"></h2>
                             元
                         </span>
                 </li>
                 <li>
                     平台用户
                     <span>
-                            <h2 class="timr currency count-title" id="count-number3">${platformData.platform_use}</h2>
+                            <h2 class="timer timr currency count-title" id="count-number3"></h2>
                             人
                         </span>
                 </li>
@@ -332,7 +383,7 @@
                             期期送好礼
                         </div>
                     </div>
-                   <%-- <div class="innerCnt act ng-scope">
+                    <div class="innerCnt act ng-scope">
                         <div class="redPacket margin0">
                             <img src="../../statics/images/20180122acc0bdd1-a4d7-4833-bdfb-40748d1a006a.png">
                         </div>
@@ -371,7 +422,7 @@
                                 </tbody>
                             </table>
                         </div>
-                    </div>--%>
+                    </div>
                 </div>
             </div>
         </div>
@@ -505,26 +556,12 @@
                 </div>
                 <div class="con">
                     <ul>
+                        <c:forEach items="${dateTitleList}" var="dateTitleList" varStatus="s">
                         <li class="ng-scope">
-                            <span class="ng-binding">$日期</span>
-                            <a class="nh-binding" href="#">$第一条公告</a>
+                            <span class="ng-binding">${dateTitleList.dateTime}</span>
+                            <a class="nh-binding" href="#">${dateTitleList.type}</a>
                         </li>
-                        <li class="ng-scope">
-                            <span class="ng-binding">$日期</span>
-                            <a class="nh-binding" href="#">$第二条公告</a>
-                        </li>
-                        <li class="ng-scope">
-                            <span class="ng-binding">$日期</span>
-                            <a class="nh-binding" href="#">$第三条公告</a>
-                        </li>
-                        <li class="ng-scope">
-                            <span class="ng-binding">$日期</span>
-                            <a class="nh-binding" href="#">$第四条公告</a>
-                        </li>
-                        <li class="ng-scope">
-                            <span class="ng-binding">$日期</span>
-                            <a class="nh-binding" href="#">$第五条公告</a>
-                        </li>
+                        </c:forEach>
                     </ul>
                 </div>
             </div>
@@ -537,26 +574,12 @@
                     <div class="pics swiper-container-news swiper-container-horizontal">
                     </div>
                     <ul class="ng-scope">
-                        <li class="active">
-                            <i class="home-dot"></i>
-                            <a href="#">第一条</a>
-                        </li>
-                        <li class="active">
-                            <i class="home-dot"></i>
-                            <a href="#">第2条</a>
-                        </li>
-                        <li class="active">
-                            <i class="home-dot"></i>
-                            <a href="#">第3条</a>
-                        </li>
-                        <li class="active">
-                            <i class="home-dot"></i>
-                            <a href="#">第4条</a>
-                        </li>
-                        <li class="active">
-                            <i class="home-dot"></i>
-                            <a href="#">第5条</a>
-                        </li>
+                            <c:forEach items="${newsMedia}" var="newsMedia" >
+                                    <li class="active">
+                                        <i class="home-dot"></i>
+                                        <a href="#">${newsMedia.ntitle}</a>
+                                    </li>
+                            </c:forEach>
                     </ul>
                 </div>
             </div>
@@ -709,5 +732,21 @@
         </div>
     </div>
 </div>
+
+<script>
+    var value = [${platformData.cumulative_investment},${platformData.profit},${platformData.platform_use}];
+    var children = $(".platformData").children().children().children().children(".timer");
+    children.each(function (i) {
+       $(this).attr("data-to",value[i]);
+    })
+   /* var number = document.getElementById("count-number");
+    //getAttribute()取值属性
+    //setAttribute()赋值属性
+    number.setAttribute("data-to","1000");
+    //data-前缀属性可以在JS中通过dataset取值，更加方便
+    console.log(number.dataset.to);*/
+
+</script>
+<script src="../../statics/js/index.js"></script>
 </body>
 </html>
